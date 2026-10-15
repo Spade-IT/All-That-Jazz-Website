@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bundle the two ATJ pages without a package install or network request."""
+"""Bundle the two ATJ V3 pages without a package install or network request."""
 from pathlib import Path
 import re
 import zipfile
@@ -15,7 +15,6 @@ for page in ('index.html', 'contact.html'):
     def style(match):
         return '<style>\n' + (SRC / match[1]).read_text() + '\n</style>'
     def script(match):
-        # Inline scripts are placed after the DOM, including formerly deferred scripts.
         code = (SRC / match[1]).read_text().replace('</script', '<\\/script')
         scripts.append('<script>\n' + code + '\n</script>')
         return ''
@@ -23,16 +22,17 @@ for page in ('index.html', 'contact.html'):
     html = re.sub(r'<script src="([^\"]+)"(?: defer)?></script>', script, html)
     html = html.replace('</body>', '\n'.join(scripts) + '\n</body>')
     (DIST / page).write_text(html)
+    (ROOT / page).write_text(html)
 
-archive = ROOT / 'All_That_Jazz_3D_Website.zip'
+archive = ROOT / 'All_That_Jazz_3D_Website_V3.zip'
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as out:
     for page in ('index.html', 'contact.html'):
         out.write(DIST / page, page)
     for path in sorted(SRC.iterdir()):
-        if path.is_file(): out.write(path, 'src/' + path.name)
+        if path.is_file():
+            out.write(path, 'src/' + path.name)
     for name in ('build.py', 'README.txt', 'verify.mjs', 'verify-house.mjs'):
         path = ROOT / name
-        if path.exists(): out.write(path, name)
-print(f'Built exactly two standalone pages. Archive: {archive}')
-for page in DIST.iterdir():
-    print(f'  {page.name}: {page.stat().st_size:,} bytes')
+        if path.exists():
+            out.write(path, name)
+print(f'Built two standalone pages and archive: {archive}')
