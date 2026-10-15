@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import sharp from 'sharp';
+import {root} from '../server/config.mjs';
+await fs.rm(path.join(root,'dist'),{recursive:true,force:true});
+await fs.cp(path.join(root,'public'),path.join(root,'dist'),{recursive:true});
+await fs.mkdir(path.join(root,'dist/assets'),{recursive:true});
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#222129"/><path d="M720 450 920 330 1110 420 910 540Z" fill="#46404f"/><circle cx="925" cy="310" r="115" fill="none" stroke="#b5a2d8" stroke-width="35"/><path d="M830 420V200M1020 420V200M830 200H1020" fill="none" stroke="#d5ef91" stroke-width="18"/><text x="85" y="90" fill="#d5ef91" font-family="Arial,sans-serif" font-size="16" letter-spacing="4">ALL THAT JAZZ / THE EXPERIENCE HOUSE</text><text x="80" y="240" fill="#f5f3ee" font-family="Arial,sans-serif" font-size="76">The experience</text><text x="80" y="325" fill="#f5f3ee" font-family="Arial,sans-serif" font-size="76">is the message.</text><text x="82" y="425" fill="#d5ef91" font-family="Arial,sans-serif" font-size="60">Come on in.</text><text x="85" y="565" fill="#a89db6" font-family="Arial,sans-serif" font-size="20">LIVE EVENTS · BRAND EXPERIENCES · EXTRAORDINARY PLACES</text></svg>`;
+await sharp(Buffer.from(svg)).png().toFile(path.join(root,'dist/assets/social-preview.png'));
+console.log('Built public website and studio in dist/.');

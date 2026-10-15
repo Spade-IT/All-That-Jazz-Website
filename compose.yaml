@@ -1,0 +1,95 @@
+name: atj-studio
+x-app: &app
+  image: atj-studio:local
+  build: .
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs: [/tmp]
+  environment: &app-env
+    NODE_ENV: production
+    PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Run npm run setup first}
+    ALLOW_INSECURE_LOCAL: ${ALLOW_INSECURE_LOCAL:-0}
+    TRUST_PROXY: '1'
+    DB_HOST: db
+    DB_PORT: '5432'
+    DB_NAME: atj
+    DB_USER: atj
+    DB_PASSWORD_FILE: /run/secrets/db_password
+    UPLOAD_DIR: /app/var/uploads
+    ENQUIRY_RETENTION_DAYS: ${ENQUIRY_RETENTION_DAYS:-365}
+    LOG_LEVEL: info
+  secrets: [db_password]
+  volumes: [uploads:/app/var/uploads]
+  networks: [backend]
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: atj_owner
+      POSTGRES_DB: atj
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_owner_password
+    secrets: [db_password,db_owner_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./deploy/init-db.sh:/docker-entrypoint-initdb.d/01-create-app.sh:ro
+    networks: [backend]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U atj_owner -d atj]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    logging: &logs
+      driver: json-file
+      options: {max-size: 10m, max-file: '3'}
+  migrate:
+    <<: *app
+    environment:
+      <<: *app-env
+      DB_USER: atj_owner
+      DB_PASSWORD_FILE: /run/secrets/db_owner_password
+    secrets: [db_owner_password]
+    command: [node, scripts/migrate.mjs]
+    depends_on:
+      db: {condition: service_healthy}
+    restart: 'no'
+    logging: *logs
+  app:
+    <<: *app
+    restart: unless-stopped
+    depends_on:
+      db: {condition: service_healthy}
+      migrate: {condition: service_completed_successfully}
+    logging: *logs
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - '${HTTP_PORT:-80}:80'
+      - '${HTTPS_PORT:-443}:443'
+      - '${HTTPS_PORT:-443}:443/udp'
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [backend,edge]
+    depends_on:
+      app: {condition: service_healthy}
+    logging: *logs
+secrets:
+  db_password:
+    file: ./.secrets/db_password
+  db_owner_password:
+    file: ./.secrets/db_owner_password
+volumes:
+  postgres_data:
+  uploads:
+  caddy_data:
+  caddy_config:
+networks:
+  backend: {internal: true}
+  edge: {}

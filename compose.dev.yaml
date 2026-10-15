@@ -1,0 +1,4 @@
+# Add only when you need to reach PostgreSQL from a local Node.js process.
+services:
+  db:
+    ports: ['127.0.0.1:5432:5432']

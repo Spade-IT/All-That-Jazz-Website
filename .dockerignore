@@ -1,0 +1,12 @@
+.git
+node_modules
+dist
+.env
+.env.*
+.secrets
+var
+backups
+coverage
+playwright-report
+test-results
+*.zip

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#141416">
+  <title>All That Jazz — Step inside the experience</title>
+  <meta name="description" content="Walk through the world of All That Jazz. Explore corporate events, destination programmes and brand activations in an interactive 3D venue, then share your next brief.">
+  <meta property="og:title" content="All That Jazz — Step inside the experience">
+  <meta property="og:description" content="Live projects. One virtual venue. Explore the world of All That Jazz.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+<link rel="canonical" href="__PUBLIC_ORIGIN__/"><meta property="og:url" content="__PUBLIC_ORIGIN__/"><meta property="og:image" content="__PUBLIC_ORIGIN__/assets/social-preview.png"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip-link" href="#project-directory">Skip to projects</a>
+<header class="site-header">
+ <a class="brand" href="index.html" aria-label="All That Jazz home"><span>all that</span><strong>jazz<span class="brand-dot">✳</span></strong></a>
+ <nav aria-label="Main navigation"><a href="index.html" class="nav-active"><span>01</span> The experience</a><a href="contact.html"><span>02</span> Let’s talk <span class="nav-arrow">↗</span></a></nav>
+ <div class="header-location"><i></i> MUMBAI · INDIA</div>
+</header>
+
+<div id="venue-message" class="venue-message" role="status" hidden></div><main id="experience" class="intro-mode">
+ <div class="world-viewport" id="world-viewport"><canvas id="world" aria-label="Interactive 3D event venue. Use WASD or arrow keys to walk, click the floor to set a destination, drag to orbit." tabindex="0"></canvas><div id="world-labels" class="world-labels"></div><div id="house-sign" class="house-sign"><b>ALL THAT JAZZ</b><span>The experience is the message</span></div><div id="fpp-reticle" class="crosshair" hidden>⊹</div></div>
+ <section class="hero" aria-labelledby="hero-title">
+  <div class="eyebrow"><span class="tiny-orbit">✳</span> ALL THAT JAZZ / THE EXPERIENCE HOUSE</div>
+  <h1 id="hero-title">The experience<br>is the message.<br><em>Come on in.</em></h1>
+  <p class="hero-description">Some things are better experienced.<br>Walk through our world of live events,<br>brand experiences and extraordinary places.</p>
+  <div class="hero-actions"><button class="button button-lime" id="enter-world" disabled>Setting the stage <span>↗</span></button><button class="text-button" id="browse-projects">Browse projects ↗</button><button class="text-button" id="intro-game">Play the arcade <span>▦</span></button></div>
+  <div class="loader" id="loader" aria-live="polite"><div class="loader-label"><span id="load-label">Preparing your backstage pass</span><span id="load-percent">00%</span></div><div class="loader-track"><div id="load-bar"></div></div></div>
+  <div class="hero-footnote"><span class="footnote-line"></span> ONE WORLD. YOUR PACE.</div>
+ </section>
+ <div class="scene-note" id="scene-note"><span>AN IMAGINED VENUE. REAL PROJECTS.</span><span class="scene-coords">19.0760° N &nbsp; 72.8777° E</span></div>
+ <div class="world-edition"><span class="edition-dot"></span> PLAYABLE PORTFOLIO <small>VOL. 01 / 2026</small></div>
+
+ <div class="explore-ui" id="explore-ui" hidden>
+  <div class="explore-topline"><div><span class="eyebrow">YOUR BACKSTAGE PASS</span><h2 id="location-title">The arrival</h2><p id="location-description">A whole world of possibilities. Find your next story.</p></div><div class="utility-buttons"><button class="icon-button" id="camera-toggle" title="Change camera view" aria-label="Switch to first person">TPP</button><button class="icon-button" id="overview-button" title="View the house floor plan" aria-label="House overview">Map</button><button class="icon-button" id="help-button" title="How to explore" aria-label="Open controls">?</button><button class="icon-button" id="sound-toggle" title="Ambient sound" aria-label="Turn on ambient sound" aria-pressed="false">♪</button></div></div>
+  <div id="nearby-project" class="nearby-project" hidden><span class="nearby-count" id="nearby-count">01</span><div><p id="nearby-category">BRAND ACTIVATION</p><h3 id="nearby-name">The Taxi Project</h3></div><button id="open-nearby" aria-label="Explore nearby project"><kbd>E</kbd><span>Explore <span aria-hidden="true">↗</span></span></button></div>
+  <div class="house-actions"><span id="house-status">OUTSIDE · THE ARCADE PATIO</span><canvas id="minimap" class="minimap-canvas" width="148" height="124" title="Click anywhere on the radar to walk there" aria-label="Interactive venue floor plan radar"></canvas><button id="house-door">Enter the house ↗</button><div class="house-quick-games"><button id="quick-tetris">▦ Tetris</button><button id="quick-space">✦ Space War</button></div></div><div class="controls-hint" id="controls-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span><span class="mouse-icon">⌖</span> click to move</span><span>drag to look · walls auto-cutaway</span></div>
+  <div class="bottom-dock"><button id="projects-button" class="dock-projects"><span class="grid-icon">▦</span> Projects <span id="visited-count">0 / 5</span></button><span class="dock-divider"></span><div class="zone-steps" id="zone-steps"></div><span class="dock-divider"></span><button id="tour-button" class="tour-button"><span class="play-icon">▷</span><span id="tour-label">Guide me</span></button><button id="arcade-button" class="arcade-button" aria-label="Open arcade: Tetris and Space War">▦ Games</button></div>
+  <div class="mobile-dpad" aria-label="Movement controls"><button data-move="w" aria-label="Walk forward">↑</button><div><button data-move="a" aria-label="Walk left">←</button><button data-move="s" aria-label="Walk backward">↓</button><button data-move="d" aria-label="Walk right">→</button></div></div>
+  <button class="exit-experience" id="back-to-intro" aria-label="Return to introduction">↙ <span>Back to arrival</span></button>
+ </div>
+ <div class="world-fallback" id="world-fallback" hidden><div class="fallback-star">✳</div><h2>A world of stories.<br>Ready to explore.</h2><p>This device can’t open the 3D venue. Every project is still here.</p><button class="button button-lime" id="fallback-projects">Explore our projects ↗</button></div>
+</main>
+
+<dialog id="project-directory" class="directory-dialog" aria-labelledby="directory-title"><div class="dialog-heading"><div><span class="eyebrow">THE WORK / SELECTED EXPERIENCES</span><h2 id="directory-title">Pick your next stop.</h2></div><button class="close-button" data-close="project-directory" aria-label="Close projects">×</button></div><p class="directory-intro">Discover our latest projects. Choose a room and we’ll take you there.</p><div class="project-grid" id="project-grid"></div><div class="directory-bottom"><span>Explore at your own pace.</span><a href="contact.html">Create your next experience <span>↗</span></a></div></dialog>
+
+<dialog id="project-detail" class="project-dialog" aria-labelledby="detail-title"><button class="close-button" data-close="project-detail" aria-label="Close project">×</button><div class="project-art" id="detail-art" aria-hidden="true"></div><div class="project-story"><div class="detail-kicker"><span id="detail-number">01 / 05</span><span id="detail-type">BRAND ACTIVATION</span></div><p class="detail-client" id="detail-client"></p><h2 id="detail-title"></h2><p class="detail-summary" id="detail-summary"></p><div class="detail-facts" id="detail-facts"></div><div class="award-block"><span class="award-star">✳</span><div><span class="eyebrow">PROJECT HIGHLIGHTS</span><p id="detail-award"></p></div></div><p class="project-interpretation">This virtual room is a creative interpretation of the project.</p><div class="detail-actions"><a class="button button-dark" href="contact.html">Let’s make your next one <span>↗</span></a><button class="text-button" id="next-project">Next story →</button></div><a id="detail-source" class="source-link" target="_blank" rel="noopener noreferrer">View project source ↗</a></div></dialog>
+
+<dialog class="arcade-dialog" id="arcade-dialog" aria-label="ATJ arcade"><div class="arcade-tabs"><strong>ATJ ARCADE</strong><button id="tab-tetris" aria-pressed="true">▦ Tetris</button><button id="tab-space" aria-pressed="false">✦ Space War</button><button class="close-button" data-close="arcade-dialog" aria-label="Close arcade">×</button></div><div id="tetris-root"></div><div id="space-root" hidden></div><div class="arcade-footer"><span id="arcade-ready">Your experience is ready whenever you are.</span><button id="arcade-enter" class="button button-lime">Enter the venue ↗</button></div></dialog>
+
+<dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><button class="close-button" data-close="help-dialog" aria-label="Close controls">×</button><span class="eyebrow">A FEW THINGS BEFORE THE SHOW</span><h2 id="help-title">Make yourself<br>at home.</h2><div class="help-row"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><p>Walk around smoothly. Arrow keys work too.</p></div><div class="help-row"><span>⌖</span><p>Click an open area or the mini-radar to walk there.<br>Drag to turn the camera; scroll to zoom.</p></div><div class="help-row"><span><kbd>E</kbd></span><p>Open a project or arcade machine when you’re near it.</p></div><div class="help-row"><span>▷</span><p>Choose “Guide me” for a smooth guided tour of every room.</p></div><div class="help-row"><span>◈</span><p>Use TPP / FPP (or V) to switch perspective. Walls automatically cutaway and show an X-ray silhouette when you step behind them.</p></div><button class="button button-lime" data-close="help-dialog">Got it. Let’s explore ↗</button></dialog>
+<div class="toast" id="toast" role="status"></div>
+<noscript><div class="noscript-message"><h2>All That Jazz</h2><p>Explore our corporate events, destination programmes and brand activations. The interactive venue requires JavaScript.</p><p>Our project collection is available through the Browse projects button when JavaScript is enabled.</p><a href="contact.html">Contact All That Jazz</a></div></noscript>
+<script src="world.js"></script><script src="engine.js"></script><script src="tetris.js"></script><script src="spacewar.js"></script><script src="app.js"></script>
+</body></html>

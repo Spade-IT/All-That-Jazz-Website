@@ -1,0 +1,55 @@
+name: Test and build
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: atj_test
+          POSTGRES_PASSWORD: ci_only_disposable_password
+          POSTGRES_DB: atj_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U atj_test -d atj_test"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      ATJ_TEST_DRIVER: postgres
+      ATJ_TEST_DATABASE_URL: postgresql://atj_test:ci_only_disposable_password@127.0.0.1:5432/atj_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+      - run: npm run test:postgres
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-test-results
+          path: test-results/
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run setup
+      - run: docker compose config --quiet
+      - run: docker compose up -d --build --wait --wait-timeout 180
+      - run: curl --fail http://localhost:8080/health/ready
+      - run: docker compose run --rm --no-deps app node scripts/seed.mjs
+      - run: curl --fail http://localhost:8080/api/venue
+      - run: docker compose logs --tail 100
+        if: failure()
+      - run: docker compose down -v
+        if: always()
