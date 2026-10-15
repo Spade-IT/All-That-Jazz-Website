@@ -1,0 +1,13 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const window={matchMedia:()=>({matches:false})};const context=vm.createContext({window,console,Math,Float32Array,Set,Map,performance:{now:()=>0},cancelAnimationFrame:()=>{},requestAnimationFrame:()=>1});
+for(const name of ['engine','world','spacewar'])vm.runInContext(fs.readFileSync(new URL(`src/${name}.js`,import.meta.url),'utf8'),context);
+const e=new window.ATJEngine({},{});
+e.avatar.x=5;e.avatar.z=13.1;const blocked=e._clampPoint({x:5,z:12.5});assert(blocked.z>=12.98,'front wall must block walking');
+e.avatar.x=0;e.avatar.z=13.1;const door=e._clampPoint({x:0,z:12.5});assert.equal(door.z,12.5,'doorway must allow walking');
+const route=e._safePath({x:6,z:16},{x:10,z:8});assert(route.some(p=>p.x===0&&p.z===13.5));assert(route.some(p=>p.x===0&&p.z===11.7));
+e.width=1280;e.height=720;e.setView('first');assert.equal(e.view,'first');assert.equal(e.eye[1],2.05);assert(Array.from(e.vp).every(Number.isFinite));e.setView('follow');assert.equal(e.view,'follow');
+const calls=[];const api=Object.fromEntries(['box','cylinder','sphere','beam','disc'].map(k=>[k,(...args)=>calls.push(args)]));const w=window.ATJWorld.build(api);assert(w.roof);assert(w.zones.some(z=>z.id==='spacewar'));assert(w.zones.some(z=>z.id==='tetris'));assert(w.spawn.z>12.6);
+const g=Object.create(window.ATJSpaceWar.prototype);Object.assign(g,{x:240,lives:3,score:0,wave:1,bullets:[{x:100,y:100}],enemies:[{x:100,y:100,v:0}],cooldown:1,spawnTimer:1,invincible:0,keys:new Set(),status:()=>{},pause:()=>{}});g.update(0);assert.equal(g.score,10);assert.equal(g.enemies.length,0);assert.equal(g.bullets.length,0);
+g.enemies=[{x:240,y:385,v:0}];g.update(0);assert.equal(g.lives,2);
+g.keys.add('a');g.x=18;g.update(.04);assert.equal(g.x,18);g.keys.clear();g.keys.add(' ');g.cooldown=0;g.update(0);assert.equal(g.bullets.length,1);
+console.log('PASS house walls, doorway, cross-door routes, FPP camera, arcade zones, Space War hits, damage, movement and firing.');

@@ -1,0 +1,1870 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#141416">
+  <title>All That Jazz — Step inside the experience</title>
+  <meta name="description" content="Walk through the world of All That Jazz. Explore corporate events, destination programmes and brand activations in an interactive 3D venue, then share your next brief.">
+  <meta property="og:title" content="All That Jazz — Step inside the experience">
+  <meta property="og:description" content="Five real projects. One virtual venue. Explore the world of All That Jazz.">
+  <meta property="og:type" content="website">
+  <style>
+:root{--bg:#141416;--paper:#f4f1eb;--muted:#aaa8b0;--line:#ffffff24;--lime:#deff88;--violet:#beb0ff;--ink:#181819;--safe:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--paper);font-family:Arial,Helvetica,sans-serif}body{overflow:hidden}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}button:disabled{cursor:wait;opacity:.7}button:focus-visible,a:focus-visible,canvas:focus-visible{outline:2px solid var(--lime);outline-offset:6px}button{border:0}a{color:inherit;text-decoration:none}button svg{pointer-events:none}[hidden]{display:none!important}kbd{display:inline-flex;justify-content:center;align-items:center;font:10px Arial,sans-serif;height:22px;min-width:22px;padding:0 5px;border:1px solid currentColor;border-radius:4px}.skip-link{position:fixed;left:20px;top:-70px;z-index:100;background:var(--lime);color:var(--ink);padding:15px}.skip-link:focus{top:10px}
+.site-header{height:106px;position:absolute;z-index:20;top:0;left:0;width:100%;padding:24px 4%;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-size:17px;line-height:.84;letter-spacing:-.9px;display:block;width:100px;flex:none}.brand>span{font-size:19px;display:block;letter-spacing:-1px}.brand>strong{display:block;font-size:43px;font-weight:800;letter-spacing:-3.4px}.brand-dot{font-size:11px;position:relative;top:-24px;left:4px;letter-spacing:0}.site-header nav{display:flex;gap:40px;font-size:12px}.site-header nav a{color:#b7b5be;display:flex;gap:10px;align-items:center;transition:color .2s}.site-header nav a:hover,.site-header nav .nav-active{color:#f8f6f0}.site-header nav a>span:first-child{font-size:9px;opacity:.6}.site-header nav .nav-arrow{margin-left:15px;font-size:17px}.header-location{font-size:9px;letter-spacing:1.6px;display:flex;gap:9px;align-items:center}.header-location i{height:5px;width:5px;background:var(--lime);border-radius:50%;box-shadow:0 0 12px #deff8866}
+#experience{height:100svh;min-height:620px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 68% 52%,#282432 0%,#18171c 39%,#141416 74%)}.world-viewport{position:absolute;inset:0;z-index:0;transition:left .55s ease,width .55s ease;touch-action:none}.intro-mode .world-viewport{left:25%;width:81%;top:40px;bottom:30px}#world{display:block;width:100%;height:100%;touch-action:none;outline:0}.hero{position:absolute;z-index:3;left:6.25%;top:23%;width:43%;pointer-events:none;transition:opacity .35s,transform .5s}.hero button,.hero a{pointer-events:auto}.eyebrow{font-size:9px;font-weight:500;letter-spacing:1.5px;line-height:1.6}.hero .eyebrow{color:#b7b3c3;display:flex;gap:13px;align-items:center}.tiny-orbit{font-size:23px;color:var(--lime)}h1{font-weight:500;font-size:clamp(50px,5.8vw,95px);letter-spacing:-.07em;line-height:.99;margin:24px 0 26px}h1 em{font-style:normal;color:var(--violet)}.hero-description{font-size:13px;color:#aeabb8;line-height:1.8;letter-spacing:.1px;margin:0 0 28px}.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.button{height:49px;border-radius:999px;padding:0 23px;display:inline-flex;align-items:center;justify-content:center;gap:22px;font-size:11px;font-weight:600;white-space:nowrap;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-lime{background:var(--lime);color:var(--ink)}.button-lime:hover{background:#eaffb1}.button-dark{background:var(--ink);color:var(--paper)}.button>span{font-size:18px}.text-button{background:transparent;color:var(--paper);font-size:11px;padding:8px 0;display:inline-flex;gap:12px;align-items:center}.text-button:hover{color:var(--lime)}.text-button>span{font-size:17px}.loader{margin-top:29px;width:255px}.loader-label{display:flex;justify-content:space-between;font-size:8px;letter-spacing:.4px;color:#9995a5;margin-bottom:9px}.loader-track{height:2px;background:#ffffff13}.loader-track>div{height:100%;width:0;background:var(--violet);transition:width .15s}.hero-footnote{display:flex;align-items:center;gap:10px;font-size:7px;letter-spacing:1.6px;color:#696674;margin-top:38px}.footnote-line{width:22px;height:1px;background:#686471}.scene-note{position:absolute;right:5%;bottom:40px;display:flex;flex-direction:column;gap:10px;align-items:flex-end;font-size:7px;letter-spacing:1.5px;color:#928c9e}.scene-coords{font-size:7px;color:#625d6d}.world-edition{position:absolute;right:5%;top:150px;font-size:7px;letter-spacing:1.7px;display:flex;gap:8px;align-items:center;pointer-events:none}.world-edition small{position:absolute;top:17px;right:0;font-size:7px;color:#6d677a}.edition-dot{height:4px;width:4px;background:var(--violet);border-radius:50%}.exploring .hero{opacity:0;pointer-events:none;transform:translateX(-70px)}.exploring .hero>*{pointer-events:none}.exploring .world-edition{display:none}.exploring .scene-note{bottom:113px;right:3%;font-size:6px;opacity:.6}.explore-ui{position:absolute;inset:0;pointer-events:none}.explore-ui button,.explore-ui a{pointer-events:auto}.explore-topline{position:absolute;left:4%;right:4%;top:135px;display:flex;align-items:flex-start;justify-content:space-between}.explore-topline .eyebrow{font-size:8px;color:var(--violet)}.explore-topline h2{font-size:25px;letter-spacing:-.9px;font-weight:400;margin:9px 0}.explore-topline p{font-size:10px;color:#96919f;margin:0;max-width:290px;line-height:1.5}.utility-buttons{display:flex;gap:8px}.icon-button{width:35px;height:35px;display:grid;place-items:center;border:1px solid #ffffff25;border-radius:50%;color:#eae6f1;background:#19181be0;font-size:16px}.icon-button:hover,.icon-button[aria-pressed=true]{background:var(--violet);color:#222}.bottom-dock{position:absolute;bottom:calc(28px + var(--safe));left:50%;transform:translateX(-50%);height:65px;display:flex;align-items:center;padding:9px 12px;gap:14px;background:#232226e8;backdrop-filter:blur(18px);border:1px solid #ffffff13;border-radius:44px;box-shadow:0 15px 55px #0004;white-space:nowrap}.dock-projects{background:transparent;color:var(--paper);display:flex;align-items:center;gap:12px;font-size:11px;padding:0 14px}.grid-icon{font-size:22px;color:var(--violet)}#visited-count{font-size:8px;color:#948e9d;border:1px solid #ffffff14;border-radius:20px;padding:6px 8px}.dock-divider{width:1px;height:22px;background:#ffffff15}.zone-steps{display:flex;gap:5px}.zone-step{width:33px;height:33px;display:grid;place-items:center;font-size:9px;color:#8c8596;background:transparent;border:1px solid transparent;border-radius:50%;transition:all .2s}.zone-step:hover{background:#ffffff15;color:white}.zone-step.visited{border-color:#bcaafa66;color:var(--violet)}.zone-step.active{background:var(--violet);color:#1b1724;border-color:var(--violet)}.tour-button{border-radius:30px;padding:12px 18px;color:var(--ink);background:var(--lime);font-size:10px;display:flex;gap:10px;align-items:center}.play-icon{font-size:15px}.arcade-button{border-radius:50%;width:34px;height:34px;background:#ffffff0b;color:var(--violet);font-size:20px}.controls-hint{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);display:flex;gap:19px;align-items:center;font-size:8px;color:#89828e;white-space:nowrap}.controls-hint>span{display:flex;gap:4px;align-items:center}.controls-hint kbd{font-size:8px;height:17px;min-width:17px;padding:0 3px;border-color:#ffffff24}.mouse-icon{font-size:18px}.exit-experience{position:absolute;left:4%;bottom:47px;color:#b7b1c0;background:transparent;font-size:12px;display:flex;gap:12px;align-items:center}.exit-experience span{font-size:9px}.world-labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}.world-label{position:absolute;left:0;top:0;transform:translate(-50%,-100%);opacity:0;white-space:nowrap;transition:opacity .3s;pointer-events:auto;border:0;background:transparent;color:#f2edf8;padding:0;cursor:pointer}.world-label .label-dot{display:block;width:11px;height:11px;border-radius:50%;background:var(--violet);border:3px solid #ffffffdd;margin:5px auto;box-shadow:0 0 0 4px #b9a5ff22}.world-label .label-name{font-size:8px;letter-spacing:.4px;padding:7px 11px;border-radius:20px;background:#201c27d9;backdrop-filter:blur(12px);display:flex;gap:10px;align-items:center;border:1px solid #ffffff1a}.world-label .label-name b{font-size:7px;color:var(--violet);font-weight:400}.world-label:hover .label-name{background:var(--violet);color:#17151c}.intro-mode .world-label{pointer-events:none}.intro-mode .world-label .label-name{font-size:7px;padding:5px 8px}.intro-mode .world-label .label-dot{width:8px;height:8px;border-width:2px}.nearby-project{position:absolute;bottom:155px;left:4%;background:#eeeee9f5;backdrop-filter:blur(16px);padding:18px 19px;display:flex;align-items:center;gap:14px;color:#23212a;border-radius:16px;box-shadow:0 8px 35px #0002;max-width:430px;animation:slide-in .3s ease}.nearby-count{font-size:32px;font-weight:300;color:#ada5b8;letter-spacing:-2px}.nearby-project p{font-size:7px;letter-spacing:1px;color:#7c718a;margin:0 0 5px}.nearby-project h3{font-size:13px;font-weight:500;margin:0}.nearby-project button{display:flex;align-items:center;gap:8px;margin-left:14px;font-size:10px;background:transparent;color:#24202c}.nearby-project button kbd{color:#877397;background:#dad5e54a}.nearby-project button>span{white-space:nowrap}.mobile-dpad{display:none;position:absolute;left:20px;bottom:145px}.mobile-dpad>button{margin:0 0 4px 44px}.mobile-dpad>div{display:flex;gap:4px}.mobile-dpad button{width:40px;height:40px;border:1px solid #ffffff30;background:#1e1b25b3;color:var(--paper);border-radius:12px;font-size:20px;touch-action:none}.mobile-dpad button:active{background:var(--violet);color:#18151d}
+dialog{padding:0;border:0;color:var(--ink);background:var(--paper);box-shadow:0 30px 130px #0008;max-height:90svh}dialog::backdrop{background:#0c0a12b8;backdrop-filter:blur(9px)}dialog[open]{animation:slide-in .25s ease}.close-button{width:35px;height:35px;background:#1c1b2010;border:1px solid #1c1b2018;border-radius:50%;font-size:24px;line-height:1;color:var(--ink);display:grid;place-items:center;flex:none}.close-button:hover{background:#1c1b2025}.dialog-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.directory-dialog{width:min(1080px,92vw);border-radius:22px;padding:42px}.dialog-heading .eyebrow{color:#867a94;font-size:8px}.dialog-heading h2{font-size:48px;line-height:1.05;letter-spacing:-2.4px;font-weight:400;margin:11px 0 0}.directory-intro{font-size:12px;line-height:1.7;color:#83788b;margin:15px 0 30px}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.project-tile{padding:0;text-align:left;background:#eae5df;border-radius:13px;overflow:hidden;min-width:0;transition:transform .2s;position:relative}.project-tile:hover{transform:translateY(-4px)}.tile-art{height:133px;position:relative;overflow:hidden}.tile-art svg{width:100%;height:100%;display:block}.tile-number{position:absolute;top:14px;left:14px;font-size:9px;color:#37313d}.tile-info{padding:15px 15px 19px}.tile-info span{font-size:7px;letter-spacing:1px;text-transform:uppercase;opacity:.5}.tile-info h3{font-size:15px;margin:7px 0 0;font-weight:500;letter-spacing:-.5px;display:flex;justify-content:space-between}.tile-contact{background:var(--lime);padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px}.tile-contact .star{font-size:32px}.tile-contact h3{font-size:25px;letter-spacing:-1px;font-weight:500;line-height:1.05;margin:16px 0 0}.tile-contact span:last-child{font-size:10px;margin-top:18px}.directory-bottom{margin-top:25px;padding-top:20px;border-top:1px solid #23202920;display:flex;justify-content:space-between;gap:20px;font-size:9px;color:#877b91}.directory-bottom a{color:var(--ink)}.directory-bottom a span{margin-left:15px}.project-dialog{width:min(950px,94vw);border-radius:20px;overflow:auto}.project-dialog>.close-button{position:absolute;right:20px;top:20px;z-index:2;background:#f4f1ebcc}.project-dialog[open]{display:grid;grid-template-columns:40% 60%}.project-art{min-height:100%;position:relative;background:#cec3ef;display:flex;align-items:center;overflow:hidden}.project-art svg{width:100%;height:auto;transform:scale(1.65)}.project-art:after{content:'A VIRTUAL INTERPRETATION';font-size:7px;letter-spacing:2px;position:absolute;bottom:27px;left:27px;color:#42354e70}.project-story{padding:48px 38px 31px}.detail-kicker{display:flex;align-items:center;justify-content:space-between;font-size:7px;letter-spacing:1.1px;color:#94879e;margin-bottom:30px}.detail-client{font-size:10px;color:#7b6c88;line-height:1.5;margin-bottom:10px}.project-story h2{font-size:48px;font-weight:400;line-height:1.02;letter-spacing:-2.7px;margin:0 0 22px;white-space:pre-line}.detail-summary{font-size:12px;line-height:1.8;color:#776c80}.detail-facts{display:flex;gap:30px;margin-top:22px;margin-bottom:24px;padding:16px 0;border-top:1px solid #29233118;border-bottom:1px solid #29233118}.detail-facts div{display:flex;flex-direction:column;gap:7px}.detail-facts span{font-size:7px;color:#91839b;letter-spacing:1px}.detail-facts strong{font-size:11px;font-weight:500}.award-block{display:flex;align-items:center;gap:15px}.award-star{font-size:36px;color:#9980c0}.award-block .eyebrow{font-size:7px;color:#8a789a}.award-block p{font-size:11px;line-height:1.6;margin:5px 0 0;color:#51435d}.project-interpretation{font-size:8px;line-height:1.7;color:#a499ad;margin:22px 0}.detail-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.detail-actions .text-button{color:#51435d;font-size:10px}.detail-actions .button{font-size:10px;height:43px;padding:0 19px}.source-link{font-size:8px;color:#9788a2;display:inline-block;margin-top:22px;border-bottom:1px solid #9788a255;padding-bottom:3px}.arcade-dialog{border-radius:24px;width:min(650px,94vw);color:var(--paper);background:#1b1a1f;overflow:auto}.arcade-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 26px 24px;border-top:1px solid #ffffff14}.arcade-footer>span{font-size:9px;line-height:1.5;color:#a99eb8}.arcade-footer .button{height:40px;font-size:9px;padding:0 18px}.help-dialog{border-radius:22px;width:min(460px,91vw);padding:38px}.help-dialog>.close-button{float:right}.help-dialog .eyebrow{font-size:7px;color:#8a7e91}.help-dialog h2{font-size:48px;font-weight:400;line-height:1;letter-spacing:-2px;margin:20px 0 30px}.help-row{display:flex;gap:20px;align-items:center;margin:20px 0}.help-row>span{width:108px;flex:none;font-size:24px;color:#9c82c2}.help-row>span kbd{font-size:8px}.help-row p{font-size:10px;color:#7e718b;line-height:1.6;margin:0}.help-dialog>.button{margin-top:20px}.toast{position:fixed;left:50%;top:110px;transform:translate(-50%,-20px);border:1px solid #ffffff18;border-radius:50px;background:#29222eea;color:#e6dcee;padding:13px 22px;font-size:10px;z-index:100;opacity:0;pointer-events:none;transition:all .3s;text-align:center;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}.world-fallback{position:absolute;top:24%;right:7%;width:35%;text-align:center;background:#28222f;border-radius:40px;padding:60px 20px}.fallback-star{font-size:70px;color:var(--violet);margin-bottom:20px}.world-fallback h2{font-weight:400;font-size:32px;letter-spacing:-1px}.world-fallback p{font-size:12px;color:#aaa0b5;line-height:1.8;padding:0 20px}.world-fallback .button{margin-top:20px}.noscript-message{position:fixed;inset:110px 10% 40px;background:var(--paper);color:var(--ink);z-index:10;padding:40px;border-radius:20px;line-height:1.8}.noscript-message a{text-decoration:underline}.world-viewport:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 -30px 70px #14141655}
+@keyframes slide-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1550px){.hero{top:25%}.hero-description{font-size:15px}.hero-actions .button{height:55px;font-size:13px}.loader{width:310px}.site-header nav{font-size:13px}.site-header{padding-top:32px}.header-location{font-size:10px}}
+@media(max-height:760px) and (min-width:900px){.hero{top:21%}h1{font-size:64px;margin:16px 0 19px}.hero-description{font-size:11px;line-height:1.6;margin-bottom:22px}.hero-footnote{margin-top:22px}.loader{margin-top:21px}.world-edition{top:123px}.project-story{padding:34px}.project-story h2{font-size:42px}.detail-kicker{margin-bottom:20px}.detail-summary{font-size:11px}.detail-facts{margin:16px 0}.project-interpretation{margin:15px 0}.project-dialog{max-height:94svh}}
+@media(max-width:1000px){.site-header{padding:23px 5%}.header-location{display:none}.site-header nav{gap:25px}.hero{left:6%;width:49%;top:25%}h1{font-size:64px}.hero-description{font-size:12px}.hero-actions{gap:10px}.hero-actions .text-button{font-size:9px}.intro-mode .world-viewport{left:27%;width:90%}.exit-experience span{display:none}.world-edition{right:5%}.directory-dialog{padding:32px}.project-story{padding:40px 28px}.project-story h2{font-size:40px}.nearby-project{bottom:154px}.bottom-dock{gap:9px}.dock-projects{padding:0 10px;gap:8px}}
+@media(max-width:700px){#experience{min-height:570px}.site-header{height:85px;padding:19px 6%;gap:12px}.brand{width:70px}.brand>span{font-size:14px}.brand>strong{font-size:32px;letter-spacing:-2.5px}.brand-dot{font-size:8px;top:-18px;left:4px}.site-header nav{gap:20px;font-size:10px}.site-header nav a{gap:5px}.site-header nav a>span:first-child{font-size:7px}.site-header nav .nav-arrow{margin-left:1px;font-size:13px}.hero{left:7%;top:14%;width:85%}.hero .eyebrow{font-size:6px;letter-spacing:1.2px}.tiny-orbit{font-size:15px}h1{font-size:clamp(42px,10vw,59px);letter-spacing:-2.7px;line-height:.97;margin:17px 0 14px}.hero-description{font-size:10px;line-height:1.65;margin-bottom:15px}.hero-description br:nth-child(2){display:none}.hero-actions{gap:17px}.hero-actions .button{height:39px;font-size:9px;padding:0 16px;gap:14px}.hero-actions .text-button{font-size:8px}.loader{width:218px;margin-top:16px}.loader-label{font-size:7px}.hero-footnote{display:none}.intro-mode .world-viewport{left:-12%;width:126%;top:37%;bottom:20px;height:63%}.intro-mode .world-label{display:none}.world-edition{top:auto;bottom:42px;right:7%;font-size:6px}.scene-note{left:7%;right:auto;bottom:30px;align-items:flex-start;font-size:5px;gap:6px}.scene-coords{font-size:5px}.explore-topline{left:6%;right:6%;top:110px}.explore-topline h2{font-size:21px}.explore-topline p{font-size:8px;max-width:195px}.explore-topline .eyebrow{font-size:6px}.utility-buttons{gap:5px}.icon-button{height:31px;width:31px;font-size:14px}.bottom-dock{bottom:calc(19px + var(--safe));height:57px;padding:6px 8px;gap:5px;max-width:95%;border-radius:32px}.dock-projects{font-size:9px;gap:7px;padding:0 9px}.grid-icon{font-size:19px}#visited-count{display:none}.zone-steps{gap:0}.zone-step{height:25px;width:25px;font-size:8px}.dock-divider{height:18px;margin:0 3px}.tour-button{font-size:8px;padding:11px 12px;gap:6px}.arcade-button{height:28px;width:28px;font-size:17px}.controls-hint{display:none}.exploring .scene-note{display:none}.mobile-dpad{display:block;bottom:calc(99px + var(--safe));left:6%}.exit-experience{bottom:91px;left:auto;right:7%;font-size:16px}.world-label .label-name{font-size:6px;padding:6px 8px;gap:6px}.world-label .label-name b{font-size:6px}.world-label .label-dot{height:8px;width:8px;border:2px solid white}.nearby-project{left:auto;right:5%;bottom:calc(133px + var(--safe));padding:11px 12px;border-radius:12px;gap:9px;max-width:64%}.nearby-count{font-size:24px}.nearby-project p{font-size:5px;letter-spacing:.5px}.nearby-project h3{font-size:10px}.nearby-project button{font-size:8px;margin-left:0;gap:0}.nearby-project button kbd{display:none}.nearby-project button>span{font-size:0}.nearby-project button>span>span{font-size:16px}.directory-dialog{padding:26px 22px;width:94vw;max-height:88svh;border-radius:18px}.dialog-heading h2{font-size:34px;letter-spacing:-1.7px}.dialog-heading .eyebrow{font-size:6px}.directory-intro{font-size:10px;margin:13px 0 20px}.project-grid{grid-template-columns:repeat(2,1fr);gap:10px}.tile-art{height:100px}.tile-info{padding:12px}.tile-info span{font-size:5px}.tile-info h3{font-size:11px;line-height:1.3}.tile-contact{min-height:150px;padding:15px}.tile-contact h3{font-size:23px}.tile-contact .star{font-size:22px}.tile-contact span:last-child{font-size:8px;margin-top:8px}.directory-bottom{font-size:8px;line-height:1.6;margin-top:20px;gap:10px}.directory-bottom>span{display:none}.project-dialog[open]{display:block;width:94vw}.project-art{height:155px;min-height:0;justify-content:center}.project-art svg{height:230px;width:330px;transform:scale(1)}.project-art:after{left:20px;bottom:16px;font-size:5px}.project-story{padding:25px}.detail-kicker{font-size:6px;margin-bottom:17px}.detail-client{font-size:9px}.project-story h2{font-size:39px;margin-bottom:17px;letter-spacing:-2px}.detail-summary{font-size:11px}.detail-facts{gap:35px;margin:17px 0}.award-block p{font-size:10px}.project-interpretation{font-size:7px;margin:17px 0}.detail-actions .button{height:41px;font-size:9px}.detail-actions{gap:10px}.detail-actions .text-button{font-size:9px}.source-link{margin-top:17px;font-size:7px}.arcade-footer{padding:15px 18px 20px;gap:10px}.arcade-footer>span{font-size:8px}.arcade-footer .button{font-size:8px;height:37px;padding:0 14px}.help-dialog{padding:29px}.help-dialog h2{font-size:43px}.help-row{gap:10px}.help-row>span{width:95px}.help-row p{font-size:9px}.world-fallback{top:56%;left:7%;width:86%;padding:18px;border-radius:18px}.world-fallback h2{font-size:22px;margin:5px 0}.world-fallback p{font-size:9px;padding:0}.fallback-star{display:none}.world-fallback .button{margin-top:5px;height:35px;font-size:9px}.toast{top:90px;font-size:9px;padding:11px 17px}}
+@media(max-width:380px){.site-header nav{gap:13px;font-size:9px}.hero{top:14%}h1{font-size:41px}.hero-description{font-size:9px}.hero-actions{gap:10px}.bottom-dock{gap:2px}.dock-projects{padding:0 7px}.zone-step{width:23px;height:23px}.tour-button{padding:10px}.dock-divider{margin:0 2px}.arcade-button{width:25px}.nearby-project{max-width:62%}.nearby-count{display:none}}
+@media(max-height:620px){#experience{min-height:0}.intro-mode .hero-footnote{display:none}.explore-topline{top:95px}.nearby-project{bottom:125px}.controls-hint{bottom:88px}.bottom-dock{bottom:18px;height:57px}.site-header{height:82px}.exit-experience{bottom:38px}}
+@media(max-height:620px) and (min-width:700px){.hero{top:96px}h1{font-size:42px;margin:12px 0}.hero-description{font-size:10px;line-height:1.6;margin-bottom:15px}.hero-actions .button{height:38px}.loader{margin-top:15px}.world-edition{top:108px}.scene-note{bottom:20px}}
+@media(max-height:460px){.hero{top:88px}h1{font-size:35px;margin:9px 0}.hero-description{display:none}.hero-actions .button{height:35px}.loader{margin-top:13px}.hero .eyebrow{font-size:6px}.world-edition,.scene-note{display:none}.explore-topline h2{font-size:19px}.explore-topline p{display:none}.explore-topline{top:91px}.controls-hint{display:none}.nearby-project{bottom:95px}.mobile-dpad{bottom:90px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Experience House additions */
+.house-sign{position:absolute;z-index:2;pointer-events:none;background:#242633e8;border:1px solid #c9ed6b;border-radius:8px;padding:9px 16px;text-align:center;transform:translate(-50%,-100%);color:#fff;white-space:nowrap}.house-sign b{display:block;font-size:16px;letter-spacing:2px}.house-sign span{font-size:10px;color:#c9ed6b}.house-actions{position:absolute;right:28px;top:205px;display:flex;flex-direction:column;gap:8px;padding:15px;background:#16161de8;border:1px solid #ffffff25;border-radius:14px;pointer-events:auto}.house-actions span{font-size:9px;letter-spacing:1px;color:#c9ed6b}.house-actions button,.arcade-tabs button{background:#33303d;border:1px solid #ffffff30;border-radius:7px;color:#fff;padding:10px 14px;cursor:pointer}.house-actions button:first-of-type{background:#c9ed6b;color:#141416}.icon-button#camera-toggle,.icon-button#overview-button{width:auto;min-width:45px;font-size:11px;padding:0 10px}.arcade-button{width:auto!important;padding:10px!important;white-space:nowrap;color:#c9ed6b!important}.arcade-tabs{display:flex;align-items:center;gap:8px;padding:15px 20px;position:relative}.arcade-tabs strong{margin-right:auto;font-size:11px;letter-spacing:1px}.arcade-tabs button[aria-pressed=true]{background:#c9ed6b;color:#171916}.arcade-tabs .close-button{position:static;padding:4px;width:30px;height:30px}.arcade-dialog{max-height:92svh;overflow:auto}.hero-actions{flex-wrap:wrap}.world-label:has(.game-label) .label-name{background:#c9ed6b;color:#111;box-shadow:0 0 22px #c9ed6b50}.space-game{padding:20px;max-width:570px;margin:auto;background:#111522;color:white;border-radius:18px}.space-game canvas{display:block;width:100%;max-height:48svh;object-fit:contain;background:#0c101e;border-radius:10px;touch-action:none}.space-game button{padding:10px 16px;background:#c9ed6b;color:#141416;border:0;border-radius:7px;cursor:pointer}.space-head{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}.space-head h2{margin:0;font-size:22px}.space-controls{display:flex;justify-content:center;gap:12px;margin-top:12px}.space-game p{font-size:12px;color:#aeb8cc}.crosshair{position:absolute;left:50%;top:50%;pointer-events:none;color:#c9ed6b;font-size:24px;transform:translate(-50%,-50%)}
+@media(max-width:700px){.house-actions{top:auto;bottom:155px;right:12px;padding:9px;gap:5px}.house-actions button{font-size:10px;padding:7px}.house-actions span{font-size:7px}.house-sign b{font-size:10px}.house-sign span{font-size:7px}.house-sign{padding:5px 8px}.arcade-tabs{padding:12px;gap:6px}.arcade-tabs button{font-size:10px;padding:8px}.utility-buttons{gap:4px}.bottom-dock .zone-steps{display:none}.space-game{padding:12px}}
+
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"All That Jazz","legalName":"All That Jazz Events & Entertainment Private Limited","description":"Mumbai-based events and experiential agency.","address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressCountry":"IN"},"sameAs":["https://www.instagram.com/allthatjazz_atj/"]}</script>
+</head>
+<body>
+<a class="skip-link" href="#project-directory">Skip to projects</a>
+<header class="site-header">
+ <a class="brand" href="index.html" aria-label="All That Jazz home"><span>all that</span><strong>jazz<span class="brand-dot">✳</span></strong></a>
+ <nav aria-label="Main navigation"><a href="index.html" class="nav-active"><span>01</span> The experience</a><a href="contact.html"><span>02</span> Let’s talk <span class="nav-arrow">↗</span></a></nav>
+ <div class="header-location"><i></i> MUMBAI · INDIA</div>
+</header>
+
+<main id="experience" class="intro-mode">
+ <div class="world-viewport" id="world-viewport"><canvas id="world" aria-label="Interactive 3D event venue. Use WASD or arrow keys to walk, click the floor to set a destination, drag to orbit." tabindex="0"></canvas><div id="world-labels" class="world-labels"></div><div id="house-sign" class="house-sign"><b>ALL THAT JAZZ</b><span>The experience is the message</span></div></div>
+ <section class="hero" aria-labelledby="hero-title">
+  <div class="eyebrow"><span class="tiny-orbit">✳</span> ALL THAT JAZZ / THE EXPERIENCE HOUSE</div>
+  <h1 id="hero-title">The experience<br>is the message.<br><em>Come on in.</em></h1>
+  <p class="hero-description">Some things are better experienced.<br>Walk through our world of live events,<br>brand experiences and extraordinary places.</p>
+  <div class="hero-actions"><button class="button button-lime" id="enter-world" disabled>Setting the stage <span>↗</span></button><button class="text-button" id="intro-game">Play the arcade <span>▦</span></button></div>
+  <div class="loader" id="loader" aria-live="polite"><div class="loader-label"><span id="load-label">Preparing your backstage pass</span><span id="load-percent">00%</span></div><div class="loader-track"><div id="load-bar"></div></div></div>
+  <div class="hero-footnote"><span class="footnote-line"></span> FIVE PROJECTS. ONE WORLD. YOUR PACE.</div>
+ </section>
+ <div class="scene-note" id="scene-note"><span>AN IMAGINED VENUE. REAL PROJECTS.</span><span class="scene-coords">19.0760° N &nbsp; 72.8777° E</span></div>
+ <div class="world-edition"><span class="edition-dot"></span> PLAYABLE PORTFOLIO <small>VOL. 01 / 2026</small></div>
+
+ <div class="explore-ui" id="explore-ui" hidden>
+  <div class="explore-topline"><div><span class="eyebrow">YOUR BACKSTAGE PASS</span><h2 id="location-title">The arrival</h2><p id="location-description">A whole world of possibilities. Find your next story.</p></div><div class="utility-buttons"><button class="icon-button" id="camera-toggle" title="Change camera view" aria-label="Switch to first person">TPP</button><button class="icon-button" id="overview-button" title="View the house floor plan" aria-label="House overview">Map</button><button class="icon-button" id="help-button" title="How to explore" aria-label="Open controls">?</button><button class="icon-button" id="sound-toggle" title="Ambient sound" aria-label="Turn on ambient sound" aria-pressed="false">♪</button></div></div>
+  <div id="nearby-project" class="nearby-project" hidden><span class="nearby-count" id="nearby-count">01</span><div><p id="nearby-category">BRAND ACTIVATION</p><h3 id="nearby-name">The Taxi Project</h3></div><button id="open-nearby" aria-label="Explore nearby project"><kbd>E</kbd><span>Explore <span aria-hidden="true">↗</span></span></button></div>
+  <div class="house-actions"><span id="house-status">OUTSIDE · THE ARCADE PATIO</span><button id="house-door">Enter the house ↗</button><button id="quick-tetris">▦ Tetris</button><button id="quick-space">✦ Space War</button></div><div class="controls-hint" id="controls-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span><span class="mouse-icon">⌖</span> click to move</span><span>drag to look</span></div>
+  <div class="bottom-dock"><button id="projects-button" class="dock-projects"><span class="grid-icon">▦</span> Projects <span id="visited-count">0 / 5</span></button><span class="dock-divider"></span><div class="zone-steps" id="zone-steps"></div><span class="dock-divider"></span><button id="tour-button" class="tour-button"><span class="play-icon">▷</span><span id="tour-label">Guide me</span></button><button id="arcade-button" class="arcade-button" aria-label="Open arcade: Tetris and Space War">▦ Games</button></div>
+  <div class="mobile-dpad" aria-label="Movement controls"><button data-move="w" aria-label="Walk forward">↑</button><div><button data-move="a" aria-label="Walk left">←</button><button data-move="s" aria-label="Walk backward">↓</button><button data-move="d" aria-label="Walk right">→</button></div></div>
+  <button class="exit-experience" id="back-to-intro" aria-label="Return to introduction">↙ <span>Back to arrival</span></button>
+ </div>
+ <div class="world-fallback" id="world-fallback" hidden><div class="fallback-star">✳</div><h2>A world of stories.<br>Ready to explore.</h2><p>This device can’t open the 3D venue. Every project is still here.</p><button class="button button-lime" id="fallback-projects">Explore our projects ↗</button></div>
+</main>
+
+<dialog id="project-directory" class="directory-dialog" aria-labelledby="directory-title"><div class="dialog-heading"><div><span class="eyebrow">THE WORK / SELECTED EXPERIENCES</span><h2 id="directory-title">Pick your next stop.</h2></div><button class="close-button" data-close="project-directory" aria-label="Close projects">×</button></div><p class="directory-intro">Five real projects. Five different worlds. Choose a room and we’ll take you there.</p><div class="project-grid" id="project-grid"></div><div class="directory-bottom"><span>Explore at your own pace.</span><a href="contact.html">Create your next experience <span>↗</span></a></div></dialog>
+
+<dialog id="project-detail" class="project-dialog" aria-labelledby="detail-title"><button class="close-button" data-close="project-detail" aria-label="Close project">×</button><div class="project-art" id="detail-art" aria-hidden="true"></div><div class="project-story"><div class="detail-kicker"><span id="detail-number">01 / 05</span><span id="detail-type">BRAND ACTIVATION</span></div><p class="detail-client" id="detail-client"></p><h2 id="detail-title"></h2><p class="detail-summary" id="detail-summary"></p><div class="detail-facts" id="detail-facts"></div><div class="award-block"><span class="award-star">✳</span><div><span class="eyebrow">EEMAX GLOBAL 2026</span><p id="detail-award"></p></div></div><p class="project-interpretation">This virtual room is a creative interpretation of the project.</p><div class="detail-actions"><a class="button button-dark" href="contact.html">Let’s make your next one <span>↗</span></a><button class="text-button" id="next-project">Next story →</button></div><a id="detail-source" class="source-link" target="_blank" rel="noopener noreferrer">View the project recognition ↗</a></div></dialog>
+
+<dialog class="arcade-dialog" id="arcade-dialog" aria-label="ATJ arcade"><div class="arcade-tabs"><strong>ATJ ARCADE</strong><button id="tab-tetris" aria-pressed="true">▦ Tetris</button><button id="tab-space" aria-pressed="false">✦ Space War</button><button class="close-button" data-close="arcade-dialog" aria-label="Close arcade">×</button></div><div id="tetris-root"></div><div id="space-root" hidden></div><div class="arcade-footer"><span id="arcade-ready">Your experience is ready whenever you are.</span><button id="arcade-enter" class="button button-lime">Enter the venue ↗</button></div></dialog>
+
+<dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><button class="close-button" data-close="help-dialog" aria-label="Close controls">×</button><span class="eyebrow">A FEW THINGS BEFORE THE SHOW</span><h2 id="help-title">Make yourself<br>at home.</h2><div class="help-row"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><p>Walk around. Arrow keys work too.</p></div><div class="help-row"><span>⌖</span><p>Click an open area to walk there.<br>Drag to turn the camera; scroll to zoom.</p></div><div class="help-row"><span><kbd>E</kbd></span><p>Open a project when you’re near it.</p></div><div class="help-row"><span>▷</span><p>Choose “Guide me” for a tour of every room.</p></div><div class="help-row"><span>◈</span><p>Use TPP / FPP to switch perspective. Press V too. Map shows the house floor plan.</p></div><button class="button button-lime" data-close="help-dialog">Got it. Let’s explore ↗</button></dialog>
+<div class="toast" id="toast" role="status"></div>
+<noscript><div class="noscript-message"><h2>All That Jazz</h2><p>Explore our corporate events, destination programmes and brand activations. The interactive venue requires JavaScript.</p><p>Selected work: Asian Paints Taxi Project 2025, Privilege Club Japan and USA 2025, Elite Night 2025, and AIMC 2026.</p><a href="contact.html">Contact All That Jazz</a></div></noscript>
+
+<script>
+/* ATJ's event-world: original, procedural portfolio pavilions. */
+(function () {
+  'use strict';
+  const C = {
+    ivory:'#eee9dd', snow:'#faf8f0', concrete:'#c6c8c5', side:'#949b98',
+    ink:'#242633', black:'#10131c', purple:'#8b5af3', violet:'#bea9ff',
+    lime:'#c9ed6b', green:'#66816a', hedge:'#587262', cyan:'#91d5cb',
+    pink:'#efb0c8', pinkLight:'#f8cadb', gold:'#d9b771', silver:'#c1c9cd',
+    asphalt:'#4c5356', yellow:'#f1c94b', rose:'#cf7978', muted:'#a2a8a1'
+  };
+  function build(api) {
+    const {box,cylinder,sphere,beam,disc}=api;
+    const B=(x,y,z,w,h,d,c,r=0)=>box(x,y,z,w,h,d,c,r);
+    const Y=(x,y,z,r,h,c,n=20)=>cylinder(x,y,z,r,h,c,n);
+    const S=(x,y,z,r,c,n=10)=>sphere(x,y,z,r,c,n);
+    const L=(ax,ay,az,bx,by,bz,r,c)=>beam(ax,ay,az,bx,by,bz,r,c);
+    const D=(x,y,z,r,c)=>disc(x,y,z,r,c);
+    function rounded(x,y,z,w,h,d,r,c){
+      B(x,y,z,w-r*2,h,d,c);B(x,y,z,w,h,d-r*2,c);
+      for(const sx of [-1,1])for(const sz of [-1,1])Y(x+sx*(w/2-r),y,z+sz*(d/2-r),r,h,c,12);
+    }
+    function shadow(x,z,r){D(x,.024,z,r,'#b8bbb0');}
+    function shrub(x,z,r=.58){
+      shadow(x+.12,z+.1,r+.13);Y(x,.23,z,r*.87,.46,C.concrete,12);
+      S(x,.75,z,r,C.hedge);S(x-.20,.84,z+.05,r*.68,C.green);
+    }
+    function tree(x,z,h=3.0){
+      shadow(x+.25,z+.1,.85);Y(x,.22,z,.55,.42,C.snow,16);
+      Y(x,1,z,.095,1.8,'#7f7967',8);S(x,h-.7,z,.85,C.green);
+      S(x-.40,h-.85,z+.06,.58,'#7c9274');S(x+.30,h-.95,z+.25,.61,C.hedge);
+    }
+    function bollard(x,z){Y(x,.39,z,.07,.78,C.ink,8);Y(x,.79,z,.085,.09,C.lime,8);}
+    function bench(x,z,r=0){
+      B(x,.52,z,1.6,.16,.58,C.snow,r);
+      for(const s of [-.55,.55])B(x+Math.cos(r)*s,.25,z-Math.sin(r)*s,.13,.5,.42,C.ink,r);
+    }
+    function plantbox(x,z,w=1.5){B(x,.25,z,w,.5,.52,C.snow);for(let i=0;i<3;i++)S(x-w*.34+i*w*.34,.68,z,.32,C.hedge);}
+    function pavilion(x,z,w,d,accent){
+      rounded(x,-.025,z,w+.38,.19,d+.38,.55,C.concrete);
+      rounded(x,.04,z,w,.13,d,.43,C.snow);
+      B(x,.12,z+d/2-.12,w-.55,.06,.09,accent);
+      // Open-sided gallery shell: backdrop, corner pilasters and a floating cornice.
+      B(x,2.5,z-d/2+.18,w-.4,4.8,.25,C.ivory);
+      B(x,4.97,z-d/2+.19,w-.20,.22,.57,C.snow);
+      for(const s of [-1,1]){
+        B(x+s*(w/2-.25),2.51,z-d/2+.5,.32,4.86,.9,C.concrete);
+        B(x+s*(w/2-.255),2.51,z-d/2+.985,.08,4.4,.06,accent);
+      }
+      B(x,4.76,z-d/2+.34,w-1.15,.06,.05,accent);
+    }
+    function truss(x,z,w,h=4.5){
+      const c=C.silver;
+      for(const s of [-1,1]){
+        const tx=x+s*w/2;
+        L(tx-.12,.12,z,tx-.12,h,z,.045,c);L(tx+.12,.12,z,tx+.12,h,z,.045,c);
+        for(let y=.3;y<h-.3;y+=.62)L(tx-.12,y,z,tx+.12,y+.6,z,.025,c);
+      }
+      L(x-w/2,h-.1,z,x+w/2,h-.1,z,.045,c);L(x-w/2,h+.15,z,x+w/2,h+.15,z,.045,c);
+      for(let i=-w/2;i<w/2-.35;i+=.55)L(x+i,h-.1,z,x+i+.55,h+.15,z,.025,c);
+      for(let i=-1;i<=1;i++){
+        B(x+i*w*.3,h-.31,z+.05,.28,.34,.36,C.ink);
+        B(x+i*w*.3,h-.47,z+.245,.22,.08,.035,C.violet);
+      }
+    }
+    function screen(x,y,z,w,h,c=C.purple){
+      B(x,y,z,w+.16,h+.16,.19,C.ink);B(x,y,z+.105,w,h,.025,c);
+    }
+    function chair(x,z,r=0,c=C.snow){
+      B(x,.46,z,.49,.11,.49,c,r);B(x,.8,z-.205,.48,.68,.08,c,r);
+      for(const a of [-.16,.16])for(const b of [-.16,.16])B(x+a,.22,z+b,.045,.44,.045,C.ink);
+    }
+    function stage(x,z,w,d){
+      rounded(x,.26,z,w,.46,d,.20,C.ink);
+      B(x,.51,z,w-.14,.04,d-.13,'#3b394a');
+      B(x,.40,z+d/2+.025,w-.18,.08,.035,C.purple);
+      B(x,.13,z+d/2+.36,w*.45,.24,.63,C.concrete);
+    }
+    function lightPillar(x,z,h=2.7,c=C.purple){
+      B(x,h/2,z,.17,h,.17,C.ink);B(x,h/2,z+.092,.045,h-.15,.02,c);
+      Y(x,.10,z,.24,.18,C.ink,12);
+    }
+    function tulipTable(x,z,r=.65,c=C.snow){
+      D(x+.1,.025,z+.12,r+.1,'#b6b8ae');Y(x,.13,z,.30,.13,C.silver);
+      Y(x,.52,z,.075,.86,C.silver);Y(x,.97,z,r,.10,c,20);
+    }
+    function taxi(x,z,rot=0){
+      // Models face toward positive X; one three-quarter model turns into the entrance.
+      const p=(a,b,c)=>[x+Math.cos(rot)*a+Math.sin(rot)*c,b,z-Math.sin(rot)*a+Math.cos(rot)*c];
+      const b=(a,y,c,w,h,d,col)=>{const q=p(a,y,c);B(q[0],q[1],q[2],w,h,d,col,rot);};
+      const s=(a,y,c,r,col)=>{const q=p(a,y,c);S(q[0],q[1],q[2],r,col,10);};
+      shadow(x,z,1.25);b(0,.53,0,2.5,.59,1.05,C.yellow);b(-.16,.99,0,1.24,.53,.9,C.yellow);
+      b(.12,1.01,.462,.76,.31,.024,'#3c575c');b(.12,1.01,-.462,.76,.31,.024,'#3c575c');
+      b(-.41,1.01,.462,.30,.31,.025,'#42676c');b(-.41,1.01,-.462,.30,.31,.025,'#42676c');
+      b(.49,1.02,0,.06,.30,.81,'#46696c');b(-.80,1.0,0,.04,.25,.78,'#46696c');
+      b(-.10,1.32,0,.47,.19,.30,C.snow);b(1.255,.53,0,.06,.20,.74,C.ink);
+      for(const a of [-.78,.77])for(const c of [-.54,.54]){s(a,.34,c,.27,C.ink);s(a,.34,c*1.025,.12,C.silver);}
+      for(const c of [-.34,.34])b(1.277,.68,c,.03,.13,.17,C.snow);
+      b(-.04,.62,.538,1.6,.085,.02,C.ink);b(-.04,.62,-.538,1.6,.085,.02,C.ink);
+    }
+    function cherry(x,z,scale=1){
+      shadow(x+.2,z+.12,scale*.96);Y(x,.21,z,.53,.40,C.ivory);
+      L(x,.35,z,x,2.1*scale,z,.12*scale,'#897568');
+      L(x,1.45*scale,z,x-.65*scale,2.42*scale,z-.16,.07*scale,'#897568');
+      L(x,1.75*scale,z,x+.68*scale,2.56*scale,z+.18,.065*scale,'#897568');
+      S(x,2.75*scale,z,.82*scale,C.pink);S(x-.68*scale,2.51*scale,z-.16,.67*scale,C.pinkLight);
+      S(x+.65*scale,2.6*scale,z+.16,.63*scale,C.pinkLight);S(x+.13,3.22*scale,z-.1,.5*scale,C.pinkLight);
+    }
+    function lantern(x,z){
+      B(x,.12,z,.42,.22,.42,C.concrete);B(x,.69,z,.18,1.0,.18,C.concrete);
+      B(x,1.22,z,.60,.14,.60,C.ink);B(x,1.02,z,.40,.30,.40,C.gold);
+      B(x,1.37,z,.75,.15,.73,C.ink);B(x,1.47,z,.43,.07,.43,C.ink);
+    }
+    function skyline(x,z){
+      const towers=[[-2.65,1.25,.61],[-1.9,2.2,.65],[-1.06,3.4,.72],[-.13,2.5,.72],[.76,1.73,.62],[1.64,2.9,.76],[2.56,1.4,.67]];
+      for(let k=0;k<towers.length;k++){
+        const [dx,h,w]=towers[k];B(x+dx,.5+h/2,z,w,h,.60,k%2?C.violet:C.purple);
+        B(x+dx,h+.56,z,w*.77,.12,.51,C.snow);
+        for(let yy=.85;yy<h+.2;yy+=.53)for(const xx of [-.16,.16])B(x+dx+xx,yy,z+.309,.105,.22,.02,C.lime);
+      }
+      L(x-1.06,3.9,z,x-1.06,4.52,z,.025,C.snow);
+      B(x-1.06,4.03,z,.28,.50,.3,C.violet);
+    }
+
+    // A warm architectural island hovering over a charcoal studio floor.
+    B(0,-1.55,0,145,.20,145,'#20252a');
+    rounded(0,-1.05,.5,43,.34,36.8,2.0,'#555e60');
+    rounded(0,-.72,.5,42.5,.40,36.4,1.75,C.side);
+    rounded(0,-.34,.5,42,.44,36,1.6,C.concrete);
+    rounded(0,-.11,.5,41.5,.24,35.5,1.35,C.ivory);
+    // Delicate paver joints, with a broad open promenade at the heart.
+    for(let x=-19;x<=19;x+=2)B(x,.016,.5,.015,.012,33.5,'#d6d5ca');
+    for(let z=-15;z<=17;z+=2)B(0,.017,z,39,.012,.015,'#d6d5ca');
+    B(0,.026,1,5.2,.025,30.3,'#dedfd4');
+    for(const s of [-1,1])B(s*2.69,.041,1,.055,.035,30.3,C.snow);
+    B(0,.049,1,5.10,.018,.08,'#c8cabc');
+    // Greenway paths lead to each project; these dots guide rather than block movement.
+    for(let z=-13;z<=15;z+=1.15)D(.0,.058,z,.10,C.cyan);
+    for(const z of [-6.2,8.2])for(const s of [-1,1])for(let x=2;x<10;x+=1.1)D(s*x,.067,z,.09,C.cyan);
+    for(const x of [-20,20])for(const z of [-14,-7,0,7,14]){if(z===0)tree(x,z,3.2);else shrub(x,z,.54);}
+    for(const z of [-16.25,17.25])for(const x of [-15,-7,7,15])shrub(x,z,.58);
+    for(const s of [-1,1])for(const z of [-9,-3,3,10,15])bollard(s*3.18,z);
+
+    // 01 / THE TAXI PROJECT — a miniature Mumbai street inside the gallery.
+    pavilion(-13,6.3,10,10,C.yellow);
+    B(-13,.11,6.9,8.6,.055,6.8,C.asphalt);
+    for(let z=4.2;z<10;z+=1.35)B(-13,.152,z,.08,.025,.68,C.snow);
+    B(-16.97,.17,6.9,.55,.19,6.8,C.concrete);B(-9.03,.17,6.9,.55,.19,6.8,C.concrete);
+    screen(-13,2.8,1.72,6.9,3.18,C.yellow);
+    // Graphic stripes and layered festival forms on the backdrop.
+    for(let i=-2;i<=2;i++)B(-13+i*1.05,2.8,1.86,.17,2.72,.045,i%2?C.snow:C.ink,-.16);
+    B(-13,2.75,1.9,5.7,.62,.07,C.yellow);
+    taxi(-14.78,6.4,.20);taxi(-11.2,8.0,-.12);
+    taxi(-11.1,4.45,0);
+    for(const x of [-16.5,-9.55]){
+      Y(x,1.62,8.8,.055,3.2,C.ink,10);L(x,3.2,8.8,x-.6,3.2,8.8,.045,C.ink);
+      B(x-.58,3.13,8.8,.51,.12,.30,C.snow);
+    }
+    B(-16.5,1.75,3.4,.11,3.4,.11,C.ink);B(-16.5,2.7,3.4,.70,.73,.10,C.yellow);
+    shrub(-17.4,10.9,.44);shrub(-8.6,10.9,.44);
+    lightPillar(-8.55,3.1,3.5,C.yellow);
+
+    // 02 / PRIVILEGE CLUB JAPAN — arrival gate, blossom garden and event stage.
+    pavilion(-13,-7,10,10,C.rose);
+    B(-13,.132,-6.3,3.0,.05,7.75,'#dfd5c5');
+    for(let z=-9.8;z<-2.1;z+=.7)B(-13,.169,z,2.1,.065,.40,C.concrete);
+    stage(-13,-10.1,6.7,2.0);
+    screen(-13,2.79,-11.40,6.65,3.05,'#e7c7be');
+    // Sun disc stands proud of the back wall as a geometric set element.
+    S(-13,3.0,-11.22,1.16,C.rose,22);B(-13,1.56,-11.02,6.65,.48,.12,'#bcaca7');
+    // Torii entrance with sculpted, slightly lifted beam ends.
+    for(const s of [-1,1]){
+      Y(-13+s*2.16,2.0,-4.2,.15,4.0,C.rose,12);
+      Y(-13+s*2.16,.22,-4.2,.27,.42,C.ink,12);
+      B(-13+s*2.43,4.23,-4.2,1.10,.22,.50,C.ink,-s*.07);
+    }
+    B(-13,3.30,-4.2,5.08,.19,.27,C.rose);B(-13,4.10,-4.2,5.2,.27,.48,C.rose);
+    B(-13,4.30,-4.2,5.35,.17,.57,C.ink);B(-13,3.73,-4.2,.12,.63,.24,C.rose);
+    cherry(-16.48,-6.4,1.05);cherry(-9.44,-6.9,1.12);
+    cherry(-16.55,-10.6,.78);cherry(-9.55,-10.45,.76);
+    lantern(-15.10,-3.0);lantern(-10.9,-3.0);
+    for(const side of [-1,1])for(let k=0;k<3;k++)D(-13+side*(1.4+k*.40),.18,-6.2+k*.58,.08,C.pink);
+
+    // 03 / PRIVILEGE CLUB USA — skyline set, curved celebratory steps and light towers.
+    pavilion(0,-12.75,9.2,6.4,C.purple);
+    stage(0,-13.65,7.65,3.25);
+    screen(0,3.0,-15.55,7.6,3.5,'#222237');
+    skyline(0,-14.35);
+    for(const s of [-1,1]){
+      lightPillar(s*3.57,-12.32,3.8,C.lime);
+      Y(s*3.65,.45,-10.10,.48,.79,C.purple,18);S(s*3.65,1.0,-10.10,.36,C.lime);
+    }
+    B(0,.15,-11.58,4.15,.27,.62,C.concrete);B(0,.08,-11.01,4.65,.13,.56,C.ivory);
+    for(let i=0;i<5;i++)B(-2.5+i*1.25,4.31,-15.38,.07,.09,.03,C.lime);
+    truss(0,-14.92,8.5,5.15);
+
+    // 04 / ELITE NIGHT — a black-tie gala with sculptural gold arches and banquet tables.
+    pavilion(13,-7,10,10,C.gold);
+    B(13,.132,-7,8.5,.05,8.8,'#dad5ca');
+    stage(13,-10.28,7.7,2.7);
+    screen(13,2.75,-11.4,7.15,3.05,'#2b2730');
+    for(const dx of [-2.45,0,2.45]){
+      const ax=13+dx;
+      for(const s of [-1,1])Y(ax+s*.85,2.2,-11.15,.075,2.9,C.gold,10);
+      for(let i=0;i<9;i++){
+        const a=i*Math.PI/9,b=(i+1)*Math.PI/9;
+        L(ax+Math.cos(a)*.85,3.65+Math.sin(a)*.85,-11.15,ax+Math.cos(b)*.85,3.65+Math.sin(b)*.85,-11.15,.074,C.gold);
+      }
+    }
+    // A hint of Paris in the gala's centerpiece; an open metallic tower sculpture.
+    const tx=13,tz=-10.14;
+    for(const sx of [-1,1])for(const sz of [-1,1])L(tx+sx*.52,.58,tz+sz*.38,tx+sx*.10,3.36,tz+sz*.08,.037,C.gold);
+    B(tx,1.44,tz,.72,.10,.55,C.gold);B(tx,2.30,tz,.42,.10,.29,C.gold);L(tx,3.35,tz,tx,3.97,tz,.025,C.gold);
+    for(const x of [10.1,15.9])for(const z of [-6.9,-3.6]){
+      tulipTable(x,z,.80,C.snow);Y(x,1.12,z,.18,.20,C.gold,12);S(x,1.42,z,.25,C.pinkLight);
+      for(const off of [-1,1]){chair(x+off*.89,z,off*Math.PI*.5,'#ddd3c0');}
+    }
+    for(const s of [-1,1]){
+      Y(13+s*4.30,1.43,-8.5,.11,2.8,C.gold,10);S(13+s*4.30,3.0,-8.5,.40,C.snow,16);
+      plantbox(13+s*3.7,-2.22,1.35);
+    }
+
+    // 05 / AIMC — conference theatre with a superwide LED set and ordered seats.
+    pavilion(13,6.3,10,10,C.purple);
+    stage(13,3.38,8.15,2.75);
+    screen(13,2.73,1.74,7.7,3.3,C.purple);
+    B(13,2.72,1.89,1.70,2.74,.03,C.violet,.19);
+    B(13,2.72,1.92,1.0,2.34,.03,C.purple,.19);
+    B(10.20,2.0,1.90,1.34,.20,.04,C.lime);B(15.50,3.38,1.90,1.83,.13,.04,C.lime);
+    B(15.70,1.21,3.52,.64,1.36,.55,C.snow);B(15.70,1.89,3.52,.89,.12,.71,C.ink);
+    B(15.70,1.35,3.82,.40,.49,.04,C.purple);
+    for(let row=0;row<3;row++)for(const group of [-1,1])for(let seat=0;seat<3;seat++)chair(13+group*(.86+seat*.84),6.08+row*1.30,0,row%2?C.ivory:C.snow);
+    truss(13,2.0,8.9,5.35);
+    for(const x of [8.65,17.35]){B(x,1.11,4.1,.56,1.93,.6,C.ink);B(x,1.11,4.415,.39,1.63,.028,'#3a3b46');}
+    shrub(8.57,10.94,.45);shrub(17.43,10.94,.45);
+
+    // A monumental welcome sculpture: an abstract A, a suspended orb, and a calm lounge.
+    rounded(0,.09,1.0,6.4,.16,5.7,.95,C.snow);
+    Y(0,.21,.55,1.65,.20,C.concrete,28);
+    L(-1.40,.32,.52,0,4.68,.52,.20,C.snow);L(0,4.68,.52,1.4,.32,.52,.20,C.snow);
+    L(-.83,2.10,.52,.83,2.10,.52,.14,C.purple);S(0,2.99,.52,.43,C.lime,16);
+    // Low floating hoop made of slim gold members.
+    for(let i=0;i<30;i++){
+      const a=i*Math.PI*2/30,b=(i+1)*Math.PI*2/30;
+      L(Math.cos(a)*1.91,2.56+Math.sin(a)*.25,.55+Math.sin(a)*1.55,Math.cos(b)*1.91,2.56+Math.sin(b)*.25,.55+Math.sin(b)*1.55,.037,C.gold);
+    }
+    for(const s of [-1,1]){
+      bench(s*5.1,1.6,Math.PI*.5);tree(s*5.1,-1.3,3.15);plantbox(s*5.1,4.0,1.8);
+      tulipTable(s*4.32,1.52,.38,C.ivory);
+    }
+
+    // THE EXPERIENCE HOUSE: a continuous building with a real walk-through doorway.
+    // The ceiling is a separate mesh, cut away inside so the TPP camera stays useful.
+    B(0,.10,-1.6,38,.12,28.4,C.ivory);
+    B(-19,3.1,-1.6,.35,6.2,28.4,C.concrete);
+    B(19,3.1,-1.6,.35,6.2,28.4,C.concrete);
+    B(0,3.1,-15.8,38,6.2,.35,C.concrete);
+    for(const side of [-1,1]) {
+      B(side*11,3.1,12.6,16,6.2,.35,C.ivory);
+      B(side*11,2.9,12.81,14,2.5,.06,C.ink);
+      for(let k=0;k<6;k++)B(side*(4.6+k*2.4),2.9,12.86,.045,2.5,.05,C.violet);
+      B(side*3.15,2.3,12.6,.3,4.6,.7,C.purple);
+    }
+    B(0,5.45,12.6,6.6,1.5,.7,C.purple);
+    
+    // Patio arcade cabinets: immediately visible from the front door.
+    for(const x of [-6,6]) {
+      B(x,.14,15.3,3.3,.18,2.2,C.concrete);
+      B(x,1.2,15.3,1.1,2.4,.8,C.ink);
+      B(x,1.75,15.75,.87,1.1,.04,x<0?C.purple:C.black);
+      B(x,2.57,15.3,1.35,.25,1,C.lime);
+      B(x,.95,15.85,1.15,.2,.35,C.purple);
+      S(x-.25,1.15,15.85,.09,C.lime);S(x+.28,1.07,15.88,.065,C.rose);
+    }
+    // Blocks and stars on the cabinet screens distinguish the two games.
+    for(let i=0;i<6;i++)B(-6+(i%3-1)*.21,1.4+intFloor(i/3)*.23,15.79,.19,.19,.02,C.lime);
+    function intFloor(n){return Math.floor(n);}
+    for(let i=0;i<5;i++)S(6+(i%3-1)*.24,1.5+Math.floor(i/3)*.36,15.80,.065,C.cyan);
+
+    // CONTACT / an open reception portal on the arrival edge of the island.
+    rounded(0,.07,13.7,8.4,.15,5.45,.6,C.snow);
+    for(const s of [-1,1]){
+      B(s*3.50,2.70,14.85,.48,5.26,.52,C.purple);
+      B(s*3.22,2.69,14.83,.055,4.89,.56,C.violet);
+    }
+    B(0,5.28,14.85,7.5,.46,.64,C.purple);B(0,5.07,15.18,6.65,.065,.04,C.lime);
+    // Reception counter sits to one side, leaving a generous route through the portal.
+    rounded(-2.08,.72,12.95,2.45,1.33,1.02,.20,C.concrete);
+    rounded(-2.08,1.44,12.95,2.59,.15,1.14,.20,C.snow);
+    B(-2.08,.96,13.48,1.8,.13,.024,C.purple);
+    B(-2.0,1.72,12.95,.58,.42,.07,C.ink,-.10);
+    B(-2.0,1.69,13.002,.49,.29,.016,C.violet,-.10);
+    for(const s of [-1,1])shrub(s*3.41,11.73,.53);
+    bench(2.03,12.67,Math.PI*.5);D(.88,.167,13.10,.50,C.lime);
+    for(let x=-2;x<=2;x+=.65)D(x,.155,16.10,.085,C.purple);
+
+    return {
+      roof: {x:0,y:6.25,z:-1.6,w:38.6,h:.22,d:29,color:C.purple},
+      zones:[
+        {id:'tetris',x:-6,z:16,label:'Tetris · PLAY',number:'▦',color:C.lime},
+        {id:'spacewar',x:6,z:16,label:'Space War · PLAY',number:'✦',color:C.cyan},
+        {id:'taxi',x:-10.8,z:10.1,label:'The Taxi Project',number:'01',color:C.yellow},
+        {id:'japan',x:-13,z:-2.5,label:'Privilege Club Japan',number:'02',color:C.rose},
+        {id:'usa',x:0,z:-9.45,label:'Privilege Club USA',number:'03',color:C.purple},
+        {id:'elite',x:13,z:-2.4,label:'Elite Night',number:'04',color:C.gold},
+        {id:'aimc',x:13,z:10.5,label:'AIMC 2026',number:'05',color:C.purple},
+        {id:'contact',x:.88,z:13.10,label:'Let’s make it happen',number:'06',color:C.lime}
+      ],
+      bounds:{minX:-20,maxX:20,minZ:-16,maxZ:17},
+      spawn:{x:0,z:16.3}
+    };
+  }
+  window.ATJWorld={build};
+})();
+
+</script>
+<script>
+/* ATJ WORLD · an original, dependency-free WebGL scene and walking controller. */
+(function () {
+  'use strict';
+
+  const TAU = Math.PI * 2;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const distance = (a, b) => Math.hypot(a.x - b.x, a.z - b.z);
+  const nextTask = () => new Promise(resolve => setTimeout(resolve, 0));
+  const hex = value => {
+    if (Array.isArray(value)) return value;
+    let s = String(value || '#ffffff').replace('#', '');
+    if (s.length === 3) s = s.split('').map(c => c + c).join('');
+    const n = parseInt(s, 16);
+    return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+  };
+  const normalize = v => {
+    const n = Math.hypot(...v) || 1;
+    return v.map(x => x / n);
+  };
+  const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const ident = () => new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]);
+  const multiply = (a, b) => {
+    const out = new Float32Array(16);
+    for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) {
+      out[c * 4 + r] = a[r] * b[c * 4] + a[4 + r] * b[c * 4 + 1] + a[8 + r] * b[c * 4 + 2] + a[12 + r] * b[c * 4 + 3];
+    }
+    return out;
+  };
+  const translation = (x, y, z) => { const m = ident(); m[12] = x; m[13] = y; m[14] = z; return m; };
+  const rotationY = a => {
+    const s = Math.sin(a), c = Math.cos(a);
+    return new Float32Array([c, 0, -s, 0, 0, 1, 0, 0, s, 0, c, 0, 0, 0, 0, 1]);
+  };
+  const rotationX = a => {
+    const s = Math.sin(a), c = Math.cos(a);
+    return new Float32Array([1, 0, 0, 0, 0, c, s, 0, 0, -s, c, 0, 0, 0, 0, 1]);
+  };
+  const perspective = (fov, aspect, near, far) => {
+    const f = 1 / Math.tan(fov / 2), nf = 1 / (near - far);
+    return new Float32Array([f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) * nf, -1, 0, 0, 2 * far * near * nf, 0]);
+  };
+  const lookAt = (eye, target) => {
+    const z = normalize(eye.map((v, i) => v - target[i]));
+    const x = normalize(cross([0, 1, 0], z));
+    const y = cross(z, x);
+    return new Float32Array([x[0], y[0], z[0], 0, x[1], y[1], z[1], 0, x[2], y[2], z[2], 0, -dot(x, eye), -dot(y, eye), -dot(z, eye), 1]);
+  };
+  const inverse = m => {
+    const a = Array.from({ length: 4 }, (_, r) => Array.from({ length: 8 }, (_, c) => c < 4 ? m[c * 4 + r] : +(c - 4 === r)));
+    for (let i = 0; i < 4; i++) {
+      let pivot = i;
+      for (let r = i + 1; r < 4; r++) if (Math.abs(a[r][i]) > Math.abs(a[pivot][i])) pivot = r;
+      if (Math.abs(a[pivot][i]) < 1e-9) return ident();
+      [a[i], a[pivot]] = [a[pivot], a[i]];
+      const div = a[i][i];
+      for (let c = 0; c < 8; c++) a[i][c] /= div;
+      for (let r = 0; r < 4; r++) if (r !== i) {
+        const f = a[r][i];
+        for (let c = 0; c < 8; c++) a[r][c] -= f * a[i][c];
+      }
+    }
+    const out = new Float32Array(16);
+    for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) out[c * 4 + r] = a[r][c + 4];
+    return out;
+  };
+  const transform = (m, v) => {
+    const out = [0, 0, 0, 0];
+    for (let r = 0; r < 4; r++) out[r] = m[r] * v[0] + m[4 + r] * v[1] + m[8 + r] * v[2] + m[12 + r] * (v[3] === undefined ? 1 : v[3]);
+    return out;
+  };
+
+  class Geometry {
+    constructor() { this.data = []; }
+    vertex(p, normal, color) { this.data.push(...p, ...normal, ...color); }
+    tri(a, b, c, normal, color) {
+      this.vertex(a, normal, color); this.vertex(b, normal, color); this.vertex(c, normal, color);
+    }
+    box(x, y, z, sx, sy, sz, color, ry = 0) {
+      const c = hex(color), cs = Math.cos(ry), sn = Math.sin(ry);
+      const point = ([a, b, d]) => [x + a * cs + d * sn, y + b, z - a * sn + d * cs];
+      const norm = ([a, b, d]) => [a * cs + d * sn, b, -a * sn + d * cs];
+      const a = sx / 2, b = sy / 2, d = sz / 2;
+      const faces = [
+        [[-a, b, -d], [-a, b, d], [a, b, d], [a, b, -d], [0, 1, 0]],
+        [[-a, -b, d], [-a, -b, -d], [a, -b, -d], [a, -b, d], [0, -1, 0]],
+        [[-a, -b, d], [a, -b, d], [a, b, d], [-a, b, d], [0, 0, 1]],
+        [[a, -b, -d], [-a, -b, -d], [-a, b, -d], [a, b, -d], [0, 0, -1]],
+        [[a, -b, d], [a, -b, -d], [a, b, -d], [a, b, d], [1, 0, 0]],
+        [[-a, -b, -d], [-a, -b, d], [-a, b, d], [-a, b, -d], [-1, 0, 0]]
+      ];
+      faces.forEach(f => {
+        const n = norm(f[4]), p = f.slice(0, 4).map(point);
+        this.tri(p[0], p[1], p[2], n, c); this.tri(p[0], p[2], p[3], n, c);
+      });
+    }
+    cylinder(x, y, z, radius, height, color, segments = 16) {
+      this.beam(x, y - height / 2, z, x, y + height / 2, z, radius, color, segments);
+    }
+    beam(ax, ay, az, bx, by, bz, radius, color, segments = 12) {
+      const c = hex(color), start = [ax, ay, az], end = [bx, by, bz];
+      const axis = normalize([bx - ax, by - ay, bz - az]);
+      const u = normalize(cross(axis, Math.abs(axis[1]) < .95 ? [0, 1, 0] : [1, 0, 0]));
+      const v = cross(axis, u);
+      const radial = a => u.map((n, i) => n * Math.cos(a) + v[i] * Math.sin(a));
+      const p = (base, n) => base.map((b, j) => b + n[j] * radius);
+      for (let i = 0; i < segments; i++) {
+        const n1 = radial(i * TAU / segments), n2 = radial((i + 1) * TAU / segments);
+        const a = p(start, n1), b = p(start, n2), d = p(end, n1), e = p(end, n2);
+        this.vertex(a, n1, c); this.vertex(d, n1, c); this.vertex(e, n2, c);
+        this.vertex(a, n1, c); this.vertex(e, n2, c); this.vertex(b, n2, c);
+        this.tri(start, b, a, axis.map(n => -n), c); this.tri(end, d, e, axis, c);
+      }
+    }
+    sphere(x, y, z, radius, color, segments = 12) {
+      const c = hex(color), rows = Math.max(6, Math.floor(segments / 2));
+      const n = (a, b) => [Math.sin(b) * Math.cos(a), Math.cos(b), Math.sin(b) * Math.sin(a)];
+      const p = normal => [x + normal[0] * radius, y + normal[1] * radius, z + normal[2] * radius];
+      for (let r = 0; r < rows; r++) for (let s = 0; s < segments; s++) {
+        const a = s * TAU / segments, b = (s + 1) * TAU / segments;
+        const c1 = r * Math.PI / rows, c2 = (r + 1) * Math.PI / rows;
+        const ns = [n(a, c1), n(a, c2), n(b, c2), n(b, c1)];
+        [0, 1, 2, 0, 2, 3].forEach(i => this.vertex(p(ns[i]), ns[i], c));
+      }
+    }
+    disc(x, y, z, radius, color) {
+      const c = hex(color), n = [0, 1, 0], count = 48;
+      for (let i = 0; i < count; i++) {
+        const a = i * TAU / count, b = (i + 1) * TAU / count;
+        this.tri([x, y, z], [x + Math.sin(a) * radius, y, z + Math.cos(a) * radius], [x + Math.sin(b) * radius, y, z + Math.cos(b) * radius], n, c);
+      }
+    }
+    ring(x, y, z, inner, outer, color) {
+      const c = hex(color), n = [0, 1, 0], count = 48;
+      for (let i = 0; i < count; i++) {
+        const a = i * TAU / count, b = (i + 1) * TAU / count;
+        const p = (angle, r) => [x + Math.sin(angle) * r, y, z + Math.cos(angle) * r];
+        this.tri(p(a, inner), p(a, outer), p(b, outer), n, c);
+        this.tri(p(a, inner), p(b, outer), p(b, inner), n, c);
+      }
+    }
+  }
+
+  const vertexShader = `
+    attribute vec3 aPosition;
+    attribute vec3 aNormal;
+    attribute vec3 aColor;
+    uniform mat4 uViewProjection;
+    uniform mat4 uModel;
+    varying vec3 vNormal;
+    varying vec3 vColor;
+    varying vec3 vPosition;
+    void main() {
+      vec4 world = uModel * vec4(aPosition, 1.0);
+      vPosition = world.xyz;
+      vNormal = normalize(mat3(uModel) * aNormal);
+      vColor = aColor;
+      gl_Position = uViewProjection * world;
+    }
+  `;
+  const fragmentShader = `
+    precision mediump float;
+    varying vec3 vNormal;
+    varying vec3 vColor;
+    varying vec3 vPosition;
+    uniform vec3 uEye;
+    uniform float uAlpha;
+    uniform float uUnlit;
+    uniform float uFogStart;
+    void main() {
+      vec3 n = normalize(vNormal);
+      vec3 lightDir = normalize(vec3(-0.55, 1.0, 0.5));
+      float key = max(dot(n, lightDir), 0.0);
+      float fill = max(dot(n, normalize(vec3(0.8, 0.4, -0.7))), 0.0);
+      float hemi = n.y * 0.5 + 0.5;
+      vec3 lighting = vec3(0.37, 0.35, 0.43) + vec3(0.37, 0.34, 0.28) * key + vec3(0.12, 0.09, 0.18) * fill + vec3(0.23, 0.23, 0.25) * hemi;
+      vec3 color = vColor * mix(lighting, vec3(1.0), uUnlit);
+      float fog = smoothstep(uFogStart, uFogStart + 90.0, length(uEye - vPosition)) * 0.75;
+      color = mix(color, vec3(0.065, 0.06, 0.085), fog);
+      gl_FragColor = vec4(color, uAlpha);
+    }
+  `;
+
+  class ATJEngine {
+    constructor(canvas, options = {}) {
+      this.canvas = canvas;
+      this.options = options;
+      this.gl = null;
+      this.running = false;
+      this.ready = false;
+      this.keysEnabled = true;
+      this.keys = new Set();
+      this.view = 'overview';
+      this.autoTour = false;
+      this.tourIndex = 0;
+      this.tourWait = 0;
+      this.target = null;
+      this.waypoints = [];
+      this.zone = null;
+      this.zones = [];
+      this.bounds = { minX: -22, maxX: 22, minZ: -20, maxZ: 20 };
+      this.welcomeObstacle = { minX: -2.2, maxX: 2.2, minZ: -1.55, maxZ: 2.6 };
+      this.avatar = { x: 0, z: 8, yaw: Math.PI, moving: false, phase: 0, gait: 0 };
+      this.camera = { x: 31, y: 33, z: 40, tx: 0, ty: .5, tz: 0, angle: .57, elevation: .68, zoom: 1 };
+      this.eye = [31, 33, 40];
+      this.vp = ident();
+      this.inverseVP = ident();
+      this.width = 1;
+      this.height = 1;
+      this.lastTime = 0;
+      this.lastCallback = 0;
+      this.frame = 0;
+      this.meshes = [];
+      this.pointer = null;
+      this.reducedMotion = !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      this._boundFrame = time => this._tick(time);
+      this._listeners = [];
+      this._identity = ident();
+    }
+
+    _emit(name, ...args) {
+      try { this.options[name]?.(...args); } catch (error) { console.warn('ATJ callback:', error); }
+    }
+
+    async init(worldFactory) {
+      try {
+        this._emit('onReady', .04, 'Opening the venue');
+        this.gl = this.canvas.getContext('webgl', { alpha: true, antialias: true, powerPreference: 'high-performance', preserveDrawingBuffer: false }) || this.canvas.getContext('experimental-webgl');
+        if (!this.gl) throw new Error('Your browser could not open the 3D experience. The project index is still available.');
+        const gl = this.gl;
+        const compile = (type, source) => {
+          const shader = gl.createShader(type); gl.shaderSource(shader, source); gl.compileShader(shader);
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader) || 'Shader compilation failed');
+          return shader;
+        };
+        const vs = compile(gl.VERTEX_SHADER, vertexShader), fs = compile(gl.FRAGMENT_SHADER, fragmentShader);
+        this.program = gl.createProgram();
+        gl.attachShader(this.program, vs); gl.attachShader(this.program, fs); gl.linkProgram(this.program);
+        if (!gl.getProgramParameter(this.program, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(this.program) || 'The 3D renderer could not start');
+        gl.deleteShader(vs); gl.deleteShader(fs);
+        gl.useProgram(this.program);
+        this.attributes = Object.fromEntries(['aPosition', 'aNormal', 'aColor'].map(n => [n, gl.getAttribLocation(this.program, n)]));
+        this.uniforms = Object.fromEntries(['uViewProjection', 'uModel', 'uEye', 'uAlpha', 'uUnlit', 'uFogStart'].map(n => [n, gl.getUniformLocation(this.program, n)]));
+        gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL);
+        gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+        gl.clearColor(0, 0, 0, 0);
+        this._emit('onReady', .22, 'Building the exhibition halls');
+        await nextTask();
+        const geometry = new Geometry();
+        const api = Object.fromEntries(['box', 'cylinder', 'sphere', 'beam', 'disc'].map(name => [name, (...args) => geometry[name](...args)]));
+        const factory = worldFactory || window.ATJWorld;
+        const world = await (typeof factory === 'function' ? factory(api) : factory.build(api));
+        this.zones = world?.zones || [];
+        this.bounds = { ...this.bounds, ...world?.bounds };
+        if(world.roof){const r=world.roof,g=new Geometry();g.box(r.x,r.y,r.z,r.w,r.h,r.d,r.color);this.roof=this._mesh(g);}
+        if (world?.spawn) Object.assign(this.avatar, world.spawn);
+        this._emit('onReady', .56, 'Lighting the stages');
+        await nextTask();
+        this.scene = this._mesh(geometry);
+        geometry.data = [];
+        this._emit('onReady', .78, 'Meeting your event producer');
+        await nextTask();
+        this._createAvatar();
+        this._bindInput();
+        this.resize();
+        this._updateCamera(1, true);
+        this._draw(0);
+        this.ready = true;
+        this._emit('onReady', 1, 'Your world is ready');
+        this._emit('onMove', this.getState());
+        return this;
+      } catch (error) {
+        this.failed = true;
+        this._emit('onError', error.message || 'The 3D experience is unavailable.');
+        return this;
+      }
+    }
+
+    _mesh(geometry) {
+      const gl = this.gl, data = new Float32Array(geometry.data);
+      const buffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+      const mesh = { buffer, count: data.length / 9 };
+      this.meshes.push(mesh);
+      return mesh;
+    }
+
+    _part(method, ...args) {
+      const geometry = new Geometry(); geometry[method](...args); return this._mesh(geometry);
+    }
+
+    _createAvatar() {
+      this.parts = {
+        body: this._part('box', 0, 0, 0, .56, .67, .34, '#252136'),
+        hips: this._part('box', 0, 0, 0, .45, .22, .31, '#343044'),
+        head: this._part('sphere', 0, 0, 0, .23, '#efb390', 16),
+        hair: this._part('sphere', 0, 0, 0, .235, '#252034', 12),
+        cap: this._part('box', 0, 0, .04, .47, .09, .52, '#252034'),
+        neck: this._part('cylinder', 0, 0, 0, .095, .16, '#efb390', 10),
+        leg: this._part('cylinder', 0, -.4, 0, .105, .8, '#302b40', 12),
+        shoe: this._part('box', 0, -.83, .065, .22, .13, .35, '#f1f0e9'),
+        arm: this._part('cylinder', 0, -.28, 0, .075, .57, '#252136', 10),
+        hand: this._part('sphere', 0, -.615, 0, .083, '#efb390', 10),
+        badge: this._part('box', 0, 0, 0, .13, .17, .026, '#d6f777'),
+        headset: this._part('sphere', 0, 0, 0, .077, '#d6f777', 10),
+        lanyard: this._part('box', 0, 0, 0, .032, .26, .023, '#c6b4ef'),
+        shadow: this._part('disc', 0, .04, 0, .53, '#282131'),
+        halo: (() => { const g = new Geometry(); g.ring(0, .047, 0, .72, .8, '#d9f785'); return this._mesh(g); })(),
+        target: (() => { const g = new Geometry(); g.ring(0, .056, 0, .33, .41, '#b7a0ed'); return this._mesh(g); })()
+      };
+    }
+
+    _listen(target, event, fn, options) {
+      target.addEventListener(event, fn, options); this._listeners.push(() => target.removeEventListener(event, fn, options));
+    }
+
+    _bindInput() {
+      const canvas = this.canvas;
+      canvas.tabIndex = 0;
+      canvas.setAttribute('aria-label', 'Interactive 3D event venue. Use W A S D or arrow keys to walk, drag to orbit, or click the floor to move.');
+      canvas.style.touchAction = 'none';
+      const formActive = e => /INPUT|TEXTAREA|SELECT/.test(e.target?.tagName) || e.target?.isContentEditable;
+      this._listen(window, 'keydown', e => {
+        if (!this.keysEnabled || formActive(e) || document.activeElement !== canvas) return;
+        if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D'].includes(e.key)) return;
+        e.preventDefault(); this.keys.add(e.key.toLowerCase()); this.autoTour = false; this.target = null; this.waypoints = [];
+      });
+      this._listen(window, 'keyup', e => this.keys.delete(e.key.toLowerCase()));
+      this._listen(window, 'blur', () => this.keys.clear());
+      this._listen(document, 'visibilitychange', () => { this.keys.clear(); this.lastTime = 0; });
+      this._listen(canvas, 'blur', () => this.keys.clear());
+      this._listen(canvas, 'pointerdown', e => {
+        if (!this.keysEnabled || e.button > 0) return;
+        canvas.focus({ preventScroll: true });
+        this.pointer = { id: e.pointerId, x: e.clientX, y: e.clientY, lastX: e.clientX, lastY: e.clientY, moved: false };
+        canvas.setPointerCapture?.(e.pointerId);
+        canvas.style.cursor = 'grabbing';
+      });
+      this._listen(canvas, 'pointermove', e => {
+        const p = this.pointer;
+        if (!this.keysEnabled || !p || p.id !== e.pointerId) return;
+        const dx = e.clientX - p.lastX, dy = e.clientY - p.lastY;
+        if (Math.hypot(e.clientX - p.x, e.clientY - p.y) > 5) p.moved = true;
+        if (p.moved) {
+          this.camera.angle -= dx * .005;
+          this.camera.elevation = clamp(this.camera.elevation + dy * .003, this.view==='first'?-.85:.34, this.view==='first'?.85:1.12);
+        }
+        p.lastX = e.clientX; p.lastY = e.clientY;
+      });
+      this._listen(canvas, 'pointerup', e => {
+        const p = this.pointer;
+        if (!p || p.id !== e.pointerId) return;
+        if (!p.moved && this.keysEnabled) {
+          const hit = this._groundPoint(e.clientX, e.clientY);
+          if (hit) this.setTarget(hit.x, hit.z);
+        }
+        this.pointer = null; canvas.style.cursor = 'grab';
+        if (canvas.hasPointerCapture?.(e.pointerId)) canvas.releasePointerCapture(e.pointerId);
+      });
+      this._listen(canvas, 'pointercancel', () => { this.pointer = null; canvas.style.cursor = 'grab'; });
+      this._listen(canvas, 'wheel', e => {
+        if (!this.keysEnabled) return;
+        e.preventDefault(); this.camera.zoom = clamp(this.camera.zoom * Math.exp(e.deltaY * .0008), .56, 1.4);
+      }, { passive: false });
+      this._listen(window, 'resize', () => this.resize());
+      this._listen(canvas, 'webglcontextlost', e => {
+        e.preventDefault(); this.stop(); this._emit('onError', 'The 3D view was interrupted. You can still explore the project index, or reload to return to the venue.');
+      });
+      if (window.ResizeObserver) {
+        this.observer = new ResizeObserver(() => this.resize()); this.observer.observe(canvas);
+      }
+      canvas.style.cursor = 'grab';
+    }
+
+    _groundPoint(clientX, clientY) {
+      const rect = this.canvas.getBoundingClientRect();
+      const x = (clientX - rect.left) / rect.width * 2 - 1;
+      const y = 1 - (clientY - rect.top) / rect.height * 2;
+      const a = transform(this.inverseVP, [x, y, -1, 1]), b = transform(this.inverseVP, [x, y, 1, 1]);
+      const near = a.slice(0, 3).map(v => v / a[3]), far = b.slice(0, 3).map(v => v / b[3]);
+      const dir = far.map((v, i) => v - near[i]);
+      if (Math.abs(dir[1]) < .0001) return null;
+      const t = (.08 - near[1]) / dir[1];
+      if (t < 0) return null;
+      return { x: near[0] + dir[0] * t, z: near[2] + dir[2] * t };
+    }
+
+    resize() {
+      if (!this.gl) return;
+      const rect = this.canvas.getBoundingClientRect();
+      this.width = Math.max(1, rect.width || this.canvas.clientWidth || window.innerWidth);
+      this.height = Math.max(1, rect.height || this.canvas.clientHeight || window.innerHeight);
+      const dpr = Math.min(window.devicePixelRatio || 1, this.width < 700 ? 1.5 : 2);
+      const w = Math.floor(this.width * dpr), h = Math.floor(this.height * dpr);
+      if (this.canvas.width !== w || this.canvas.height !== h) { this.canvas.width = w; this.canvas.height = h; }
+      this.gl.viewport(0, 0, w, h);
+      this._updateCamera(0, false);
+      if (this.ready && !this.running) this._draw(0);
+    }
+
+    start() {
+      if (!this.ready || this.running || this.failed) return;
+      this.running = true; this.lastTime = 0;
+      if (this.keysEnabled && (!document.activeElement || document.activeElement === document.body)) this.canvas.focus({ preventScroll: true });
+      this.frame = requestAnimationFrame(this._boundFrame);
+    }
+
+    stop() {
+      this.running = false; cancelAnimationFrame(this.frame); this.keys.clear(); this.lastTime = 0;
+    }
+
+    setTarget(x, z) {
+      if (!Number.isFinite(x) || !Number.isFinite(z)) return;
+      this.autoTour = false;
+      this.waypoints = this._safePath(this.avatar, this._clampPoint({ x, z }));
+      this.target = this.waypoints.shift() || null;
+      this.keys.clear();
+    }
+
+    _clampPoint(p) {
+      const point = { x: clamp(p.x, this.bounds.minX + .5, this.bounds.maxX - .5), z: clamp(p.z, this.bounds.minZ + .5, this.bounds.maxZ - .5) };
+      for(const wall of [
+        {minX:-19.5,maxX:-18.65,minZ:-16.1,maxZ:12.95},
+        {minX:18.65,maxX:19.5,minZ:-16.1,maxZ:12.95},
+        {minX:-19.5,maxX:19.5,minZ:-16.2,maxZ:-15.45},
+        {minX:-19.5,maxX:-2.72,minZ:12.22,maxZ:12.98},
+        {minX:2.72,maxX:19.5,minZ:12.22,maxZ:12.98}
+      ]){
+        if(point.x>wall.minX&&point.x<wall.maxX&&point.z>wall.minZ&&point.z<wall.maxZ){
+          const a=this.avatar;
+          if(a.z<=wall.minZ)point.z=wall.minZ-.01;
+          else if(a.z>=wall.maxZ)point.z=wall.maxZ+.01;
+          else if(a.x<=wall.minX)point.x=wall.minX-.01;
+          else point.x=wall.maxX+.01;
+        }
+      }
+      const obstacle = this.welcomeObstacle;
+      if (point.x > obstacle.minX && point.x < obstacle.maxX && point.z > obstacle.minZ && point.z < obstacle.maxZ) {
+        // Keep both floor clicks and manual walking outside the sculpture.
+        const edges = [
+          { d: point.x - obstacle.minX, x: obstacle.minX - .04, z: point.z },
+          { d: obstacle.maxX - point.x, x: obstacle.maxX + .04, z: point.z },
+          { d: point.z - obstacle.minZ, x: point.x, z: obstacle.minZ - .04 },
+          { d: obstacle.maxZ - point.z, x: point.x, z: obstacle.maxZ + .04 }
+        ].sort((a, b) => a.d - b.d);
+        point.x = edges[0].x; point.z = edges[0].z;
+      }
+      return point;
+    }
+
+    setKeys(enabled) {
+      this.keysEnabled = !!enabled;
+      if (!enabled) {
+        this.keys.clear(); this.avatar.moving = false;
+        if (this.pointer && this.canvas.hasPointerCapture?.(this.pointer.id)) this.canvas.releasePointerCapture(this.pointer.id);
+        this.pointer = null;
+        this.canvas.style.cursor = 'grab';
+      }
+    }
+
+    setView(view) {
+      this.view = ['follow','first','overview'].includes(view) ? view : 'follow';
+      if(view==='first')this.camera.elevation=0;else if(this.camera.elevation<.34)this.camera.elevation=.5;
+      this._updateCamera(1,true);
+      this.camera.zoom = 1;
+    }
+
+    setAutoTour(enabled) {
+      this.autoTour = !!enabled;
+      this.keys.clear();
+      this.tourWait = 0;
+      if (this.autoTour && this.zones.length) {
+        const nearest = this.zones.reduce((best, z, i) => distance(z, this.avatar) < best.d ? { d: distance(z, this.avatar), i } : best, { d: Infinity, i: 0 });
+        this.tourIndex = nearest.i;
+        this._routeToZone(this.zones[this.tourIndex]);
+      } else { this.target = null; this.waypoints = []; }
+      this._emit('onMove', this.getState());
+    }
+
+    goToZone(id) {
+      const zone = this.zones.find(item => item.id === id);
+      if (zone) { this.autoTour = false; this.keys.clear(); this._routeToZone(zone); }
+    }
+
+    _routeToZone(zone) {
+      const destination = this._clampPoint(zone);
+      const boulevard = [this._clampPoint({ x: 0, z: this.avatar.z }), this._clampPoint({ x: 0, z: destination.z }), destination];
+      let current = this.avatar;
+      this.waypoints = [];
+      boulevard.forEach(point => {
+        if (distance(current, point) > .15) this.waypoints.push(...this._safePath(current, point));
+        current = point;
+      });
+      this.target = this.waypoints.shift() || destination;
+    }
+
+    _crossesWelcome(a, b) {
+      const obstacle = this.welcomeObstacle;
+      let low = 0, high = 1;
+      for (const axis of ['x', 'z']) {
+        const delta = b[axis] - a[axis];
+        const min = obstacle[axis === 'x' ? 'minX' : 'minZ'];
+        const max = obstacle[axis === 'x' ? 'maxX' : 'maxZ'];
+        if (Math.abs(delta) < 1e-9) {
+          if (a[axis] <= min || a[axis] >= max) return false;
+        } else {
+          let t0 = (min - a[axis]) / delta, t1 = (max - a[axis]) / delta;
+          if (t0 > t1) [t0, t1] = [t1, t0];
+          low = Math.max(low, t0); high = Math.min(high, t1);
+          if (low >= high - 1e-7) return false;
+        }
+      }
+      return high > .00001 && low < .99999;
+    }
+
+    _safePath(start, goal) {
+      if((start.z<12.6)!==(goal.z<12.6)){
+        const entry={x:0,z:start.z<12.6?11.7:13.5},exit={x:0,z:start.z<12.6?13.5:11.7};
+        return [...this._safePath(start,entry),exit,...this._safePath(exit,goal)];
+      }
+      if (!this._crossesWelcome(start, goal)) return [goal];
+      const o = this.welcomeObstacle, gap = .38;
+      const nodes = [start, goal,
+        { x: o.minX - gap, z: o.minZ - gap }, { x: o.maxX + gap, z: o.minZ - gap },
+        { x: o.maxX + gap, z: o.maxZ + gap }, { x: o.minX - gap, z: o.maxZ + gap }
+      ];
+      const costs = nodes.map(() => Infinity), previous = nodes.map(() => -1), visited = new Set();
+      costs[0] = 0;
+      for (let step = 0; step < nodes.length; step++) {
+        let current = -1;
+        for (let i = 0; i < nodes.length; i++) if (!visited.has(i) && (current < 0 || costs[i] < costs[current])) current = i;
+        if (current === 1 || !Number.isFinite(costs[current])) break;
+        visited.add(current);
+        for (let i = 0; i < nodes.length; i++) {
+          if (i === current || visited.has(i) || this._crossesWelcome(nodes[current], nodes[i])) continue;
+          const candidate = costs[current] + distance(nodes[current], nodes[i]);
+          if (candidate < costs[i]) { costs[i] = candidate; previous[i] = current; }
+        }
+      }
+      const path = [];
+      for (let i = 1; i > 0; i = previous[i]) {
+        if (previous[i] < 0) return [goal];
+        path.unshift(nodes[i]);
+      }
+      return path;
+    }
+
+    getState() {
+      const a = this.avatar;
+      return { x: a.x, z: a.z, yaw: a.yaw, moving: a.moving, zone: this.zone, tour: this.autoTour, view: this.view, target: this.target ? { ...this.target } : null, ready: this.ready, zones: this.zones, bounds: this.bounds };
+    }
+
+    projectPoint(x, y, z) {
+      const p = transform(this.vp, [x, y, z, 1]);
+      const nx = p[0] / p[3], ny = p[1] / p[3], nz = p[2] / p[3];
+      return { x: (nx + 1) * this.width / 2, y: (1 - ny) * this.height / 2, visible: p[3] > 0 && nz > -1 && nz < 1 && Math.abs(nx) < 1.08 && Math.abs(ny) < 1.08 };
+    }
+
+    _tick(time) {
+      if (!this.running) return;
+      const dt = this.lastTime ? clamp((time - this.lastTime) / 1000, 0, .04) : 0;
+      this.lastTime = time;
+      this._updateMovement(dt);
+      this._updateCamera(dt, false);
+      this._draw(time / 1000);
+      if (time - this.lastCallback > 70) { this._emit('onMove', this.getState()); this.lastCallback = time; }
+      this.frame = requestAnimationFrame(this._boundFrame);
+    }
+
+    _updateMovement(dt) {
+      const a = this.avatar;
+      let dx = 0, dz = 0;
+      if (this.keysEnabled) {
+        const forward = +(this.keys.has('w') || this.keys.has('arrowup')) - +(this.keys.has('s') || this.keys.has('arrowdown'));
+        const right = +(this.keys.has('d') || this.keys.has('arrowright')) - +(this.keys.has('a') || this.keys.has('arrowleft'));
+        if (forward || right) {
+          this.autoTour = false; this.target = null; this.waypoints = [];
+          const angle = this.camera.angle;
+          dx = -Math.sin(angle) * forward + Math.cos(angle) * right;
+          dz = -Math.cos(angle) * forward - Math.sin(angle) * right;
+        } else if (this.target) {
+          const dist = distance(this.target, a);
+          if (dist > .11) { dx = this.target.x - a.x; dz = this.target.z - a.z; }
+          else {
+            this.target = this.waypoints.shift() || null;
+            if (this.autoTour && !this.target) this.tourWait = 5;
+          }
+        }
+        if (this.autoTour && !this.target && this.zones.length) {
+          this.tourWait -= dt;
+          if (this.tourWait <= 0) {
+            this.tourIndex = (this.tourIndex + 1) % this.zones.length;
+            this._routeToZone(this.zones[this.tourIndex]);
+          }
+        }
+      }
+      const length = Math.hypot(dx, dz);
+      a.moving = length > .0001;
+      if (a.moving) {
+        const speed = this.autoTour ? 3.6 : 4.8;
+        const step = Math.min(speed * dt, this.target ? length : Infinity);
+        const p = this._clampPoint({ x: a.x + dx / length * step, z: a.z + dz / length * step });
+        a.x = p.x; a.z = p.z;
+        const desiredYaw = Math.atan2(dx, dz);
+        const delta = Math.atan2(Math.sin(desiredYaw - a.yaw), Math.cos(desiredYaw - a.yaw));
+        a.yaw += delta * Math.min(1, dt * 12);
+        a.phase += dt * 11.5;
+      }
+      a.gait = lerp(a.gait, a.moving ? 1 : 0, Math.min(1, dt * 10));
+      const nearest = this.zones.reduce((best, item) => {
+        const d = distance(item, a); return d < best.d ? { item, d } : best;
+      }, { item: null, d: Infinity });
+      const newZone = nearest.d < 4 ? nearest.item.id : null;
+      if (newZone !== this.zone) { this.zone = newZone; this._emit('onZone', newZone); }
+    }
+
+    _updateCamera(dt, snap) {
+      const a = this.avatar, c = this.camera;
+      if(this.view==='first'){
+        const pitch=c.elevation;
+        this.eye=[a.x,2.05,a.z];this.cameraDistance=0;
+        const aim=[a.x-Math.sin(c.angle)*Math.cos(pitch),2.05-Math.sin(pitch),a.z-Math.cos(c.angle)*Math.cos(pitch)];
+        this.vp=multiply(perspective(68*Math.PI/180,this.width/this.height,.06,400),lookAt(this.eye,aim));
+        this.inverseVP=inverse(this.vp);return;
+      }
+      const follow = this.view === 'follow';
+      const tx = follow ? a.x : (this.bounds.minX + this.bounds.maxX) / 2;
+      const tz = follow ? a.z : (this.bounds.minZ + this.bounds.maxZ) / 2;
+      const ty = follow ? 1.1 : 1;
+      const inside=Math.abs(a.x)<18.7&&a.z<12.6;
+      const radius = (follow ? (inside?6:10) : this._overviewDistance(tx, ty, tz)) * c.zoom;
+      this.cameraDistance = radius;
+      const factor = snap || this.reducedMotion ? 1 : 1 - Math.exp(-dt * (follow ? 3.4 : 2.5));
+      c.tx = lerp(c.tx, tx, factor); c.ty = lerp(c.ty, ty, factor); c.tz = lerp(c.tz, tz, factor);
+      const flat = radius * Math.cos(c.elevation);
+      c.x = lerp(c.x, c.tx + Math.sin(c.angle) * flat, factor);
+      c.y = lerp(c.y, c.ty + Math.sin(c.elevation) * radius, factor);
+      c.z = lerp(c.z, c.tz + Math.cos(c.angle) * flat, factor);
+      if(follow&&inside){c.x=clamp(c.x,-18.5,18.5);c.z=clamp(c.z,-15.3,12.1);c.y=Math.min(c.y,5.85);}
+      this.eye = [c.x, c.y, c.z];
+      const view = lookAt(this.eye, [c.tx, c.ty, c.tz]);
+      const projection = perspective(43 * Math.PI / 180, this.width / this.height, .15, 400);
+      this.vp = multiply(projection, view);
+      this.inverseVP = inverse(this.vp);
+    }
+
+    _overviewDistance(tx, ty, tz) {
+      const c = this.camera, bounds = this.bounds;
+      const tanV = Math.tan(43 * Math.PI / 360), tanH = tanV * this.width / this.height;
+      const sa = Math.sin(c.angle), ca = Math.cos(c.angle), se = Math.sin(c.elevation), ce = Math.cos(c.elevation);
+      let radius = 45;
+      // Fit the complete raised island, its tallest pavilion and a breathing
+      // margin. This is especially important for a narrow portrait viewport.
+      for (const x of [bounds.minX - 1.7, bounds.maxX + 1.7])
+        for (const y of [-1.5, 6.2])
+          for (const z of [bounds.minZ - 1.7, bounds.maxZ + 1.7]) {
+            const dx = x - tx, dy = y - ty, dz = z - tz;
+            const along = dx * sa + dz * ca;
+            const horizontal = dx * ca - dz * sa;
+            const vertical = dy * ce - along * se;
+            const towardEye = along * ce + dy * se;
+            radius = Math.max(radius, towardEye + Math.max(Math.abs(horizontal) / (tanH * .90), Math.abs(vertical) / (tanV * .88)));
+          }
+      return radius;
+    }
+
+    _render(mesh, model = this._identity, alpha = 1, unlit = 0) {
+      if (!mesh) return;
+      const gl = this.gl;
+      gl.bindBuffer(gl.ARRAY_BUFFER, mesh.buffer);
+      const names = ['aPosition', 'aNormal', 'aColor'];
+      names.forEach((name, i) => {
+        const location = this.attributes[name]; gl.enableVertexAttribArray(location); gl.vertexAttribPointer(location, 3, gl.FLOAT, false, 36, i * 12);
+      });
+      gl.uniformMatrix4fv(this.uniforms.uModel, false, model);
+      gl.uniform1f(this.uniforms.uAlpha, alpha);
+      gl.uniform1f(this.uniforms.uUnlit, unlit);
+      gl.drawArrays(gl.TRIANGLES, 0, mesh.count);
+    }
+
+    _draw(time) {
+      const gl = this.gl;
+      if (!gl || !this.scene) return;
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+      gl.useProgram(this.program);
+      gl.uniformMatrix4fv(this.uniforms.uViewProjection, false, this.vp);
+      gl.uniform3fv(this.uniforms.uEye, this.eye);
+      gl.uniform1f(this.uniforms.uFogStart, Math.max(68, (this.cameraDistance || 51) + 22));
+      this._render(this.scene);
+      const inside=Math.abs(this.avatar.x)<18.7&&this.avatar.z<12.6;
+      if(this.roof&&this.view!=='overview'&&!inside)this._render(this.roof);
+      if(this.view==='first')return;
+      const a = this.avatar, p = this.parts;
+      const base = multiply(translation(a.x, 0, a.z), rotationY(a.yaw));
+      this._render(p.shadow, base, .30, 1);
+      this._render(p.halo, base, .95, 1);
+      if (this.target) this._render(p.target, translation(this.target.x, 0, this.target.z), .75, 1);
+      const swing = this.reducedMotion ? 0 : Math.sin(a.phase) * .48 * a.gait;
+      const bounce = this.reducedMotion ? 0 : Math.abs(Math.sin(a.phase)) * .045 * a.gait;
+      const bodyBase = multiply(base, translation(0, bounce, 0));
+      const place = (mesh, x, y, z) => this._render(mesh, multiply(bodyBase, translation(x, y, z)));
+      place(p.hips, 0, 1.02, 0);
+      place(p.body, 0, 1.42, 0);
+      place(p.neck, 0, 1.83, 0);
+      place(p.head, 0, 2.035, 0);
+      place(p.hair, 0, 2.13, -.045);
+      place(p.cap, 0, 2.19, .02);
+      place(p.headset, -.23, 2.04, 0);
+      place(p.headset, .23, 2.04, 0);
+      place(p.lanyard, -.048, 1.58, .183);
+      place(p.lanyard, .048, 1.58, .183);
+      place(p.badge, 0, 1.37, .187);
+      [-1, 1].forEach(side => {
+        const leg = multiply(multiply(base, translation(side * .14, .97, 0)), rotationX(swing * side));
+        this._render(p.leg, leg); this._render(p.shoe, leg);
+        const arm = multiply(multiply(bodyBase, translation(side * .35, 1.72, 0)), rotationX(-swing * side * .8 - .07));
+        this._render(p.arm, arm); this._render(p.hand, arm);
+      });
+    }
+
+    destroy() {
+      this.stop(); this._listeners.forEach(remove => remove()); this.observer?.disconnect();
+      if (this.gl) { this.meshes.forEach(mesh => this.gl.deleteBuffer(mesh.buffer)); this.gl.deleteProgram(this.program); }
+    }
+  }
+
+  window.ATJEngine = ATJEngine;
+})();
+
+</script>
+<script>
+/* ATJ loading-lounge arcade. Original implementation; no dependencies. */
+(function () {
+  'use strict';
+
+  const SHAPES = {
+    I: [[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]],
+    O: [[1,1],[1,1]],
+    T: [[0,1,0],[1,1,1],[0,0,0]],
+    J: [[1,0,0],[1,1,1],[0,0,0]],
+    L: [[0,0,1],[1,1,1],[0,0,0]],
+    S: [[0,1,1],[1,1,0],[0,0,0]],
+    Z: [[1,1,0],[0,1,1],[0,0,0]]
+  };
+  const COLORS = { I:'#bdf263', O:'#fae48b', T:'#c6b4f7', J:'#839cec', L:'#f0a177', S:'#83ceae', Z:'#e695b4' };
+  // SRS wall-kick offsets. Y is converted from mathematical to canvas coordinates.
+  const KICKS = {
+    '0>1':[[0,0],[-1,0],[-1,1],[0,-2],[-1,-2]], '1>0':[[0,0],[1,0],[1,-1],[0,2],[1,2]],
+    '1>2':[[0,0],[1,0],[1,-1],[0,2],[1,2]], '2>1':[[0,0],[-1,0],[-1,1],[0,-2],[-1,-2]],
+    '2>3':[[0,0],[1,0],[1,1],[0,-2],[1,-2]], '3>2':[[0,0],[-1,0],[-1,-1],[0,2],[-1,2]],
+    '3>0':[[0,0],[-1,0],[-1,-1],[0,2],[-1,2]], '0>3':[[0,0],[1,0],[1,1],[0,-2],[1,-2]]
+  };
+  const I_KICKS = {
+    '0>1':[[0,0],[-2,0],[1,0],[-2,-1],[1,2]], '1>0':[[0,0],[2,0],[-1,0],[2,1],[-1,-2]],
+    '1>2':[[0,0],[-1,0],[2,0],[-1,2],[2,-1]], '2>1':[[0,0],[1,0],[-2,0],[1,-2],[-2,1]],
+    '2>3':[[0,0],[2,0],[-1,0],[2,1],[-1,-2]], '3>2':[[0,0],[-2,0],[1,0],[-2,-1],[1,2]],
+    '3>0':[[0,0],[1,0],[-2,0],[1,-2],[-2,1]], '0>3':[[0,0],[-1,0],[2,0],[-1,2],[2,-1]]
+  };
+  const STORAGE = 'atj-stage-tetris-best-v1';
+  const CSS = `
+    .atj-tetris{--tt-lime:#c9f27d;--tt-muted:#92938f;color:#eeefe8;font:13px/1.45 Inter,Arial,sans-serif;background:#171916;border:1px solid #34382f;border-radius:20px;padding:22px;box-sizing:border-box;width:100%;max-width:570px;margin:auto;outline:none}
+    .atj-tetris *{box-sizing:border-box}.atj-tetris button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}.atj-tetris button:focus-visible{outline:2px solid var(--tt-lime);outline-offset:3px}
+    .atj-tetris .tt-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:17px}.atj-tetris .tt-kicker{font-size:9px;letter-spacing:2.2px;color:var(--tt-lime);font-weight:600;text-transform:uppercase;margin:0 0 7px}.atj-tetris h2{font-size:clamp(20px,3.5vw,27px);line-height:1.05;letter-spacing:-1.1px;font-weight:600;margin:0 0 7px}.atj-tetris .tt-subtitle{color:var(--tt-muted);font-size:11px;margin:0}.atj-tetris .tt-close{flex:0 0 31px;height:31px;background:transparent;border:1px solid #42473b;border-radius:50%;font-size:22px;line-height:1;padding:0;color:#c4c6bd}
+    .atj-tetris .tt-body{display:grid;grid-template-columns:minmax(0,1fr) 115px;gap:19px;max-width:402px;margin:auto}.atj-tetris .tt-board-wrap{position:relative;min-width:0;border:1px solid #383e30;border-radius:8px;background:#0d100c;overflow:hidden;aspect-ratio:1/2;width:100%;max-width:250px}.atj-tetris .tt-board{display:block;width:100%;height:100%;touch-action:none}.atj-tetris .tt-status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;background:rgba(12,15,10,.87);backdrop-filter:blur(3px);text-align:center;padding:15px}.atj-tetris .tt-status[hidden]{display:none}.atj-tetris .tt-status strong{font-size:23px;letter-spacing:-.7px}.atj-tetris .tt-status span{font-size:10px;color:#b3b7aa}.atj-tetris .tt-status button{border:0;border-radius:30px;background:var(--tt-lime);color:#14180f;padding:10px 15px;font-size:11px;font-weight:600;margin-top:7px}
+    .atj-tetris .tt-sidebar{display:flex;flex-direction:column;gap:18px;padding-top:4px;min-width:0}.atj-tetris .tt-label{display:block;font-size:9px;letter-spacing:1.5px;color:var(--tt-muted);text-transform:uppercase;margin-bottom:5px}.atj-tetris .tt-score{font-size:25px;line-height:1;letter-spacing:-.8px;font-variant-numeric:tabular-nums;color:var(--tt-lime)}.atj-tetris .tt-small-value{font-size:15px;font-variant-numeric:tabular-nums}.atj-tetris .tt-next{display:block;width:88px;height:70px;max-width:100%;margin-left:-3px}.atj-tetris .tt-stats{display:flex;gap:20px}.atj-tetris .tt-buttons{margin-top:auto;display:flex;flex-direction:column;gap:7px}.atj-tetris .tt-button{border:1px solid #434a38;background:transparent;border-radius:20px;padding:9px 10px;text-align:center;font-size:10px}.atj-tetris .tt-button:hover,.atj-tetris .tt-control:hover{background:#303928}.atj-tetris .tt-button-primary{background:#d1c5eb;border-color:#d1c5eb;color:#19161f}.atj-tetris .tt-button-primary:hover{background:#e0d4fa}
+    .atj-tetris .tt-controls{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:7px;max-width:402px;margin:14px auto 0}.atj-tetris .tt-control{min-height:39px;background:#252b20;border:1px solid #3b4530;border-radius:10px;font-size:16px;user-select:none;-webkit-user-select:none}.atj-tetris .tt-control span{font-size:10px;letter-spacing:.2px}.atj-tetris .tt-help{text-align:center;color:#818a76;font-size:9px;margin:12px 0 0;letter-spacing:.1px}.atj-tetris .tt-footer{display:flex;align-items:center;justify-content:center;gap:5px;font-size:9px;color:#8b9580;margin-top:8px}.atj-tetris .tt-dot{width:4px;height:4px;background:var(--tt-lime);border-radius:50%;display:inline-block}.atj-tetris .tt-live{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:420px){.atj-tetris{padding:15px}.atj-tetris .tt-body{grid-template-columns:minmax(0,1fr) 86px;gap:12px}.atj-tetris .tt-sidebar{gap:14px}.atj-tetris .tt-stats{gap:14px}.atj-tetris .tt-help{font-size:8px}.atj-tetris .tt-score{font-size:21px}}
+    @media(max-height:760px) and (min-width:421px){.atj-tetris{padding:17px}.atj-tetris .tt-body{grid-template-columns:190px 115px;max-width:324px}.atj-tetris .tt-controls{max-width:324px}.atj-tetris .tt-sidebar{gap:14px}.atj-tetris .tt-header{margin-bottom:12px}}
+    @media(max-height:670px){.atj-tetris .tt-body{grid-template-columns:minmax(0,160px) 98px;max-width:276px}.atj-tetris .tt-controls{max-width:276px}.atj-tetris .tt-sidebar{gap:10px}.atj-tetris .tt-help{margin-top:8px}.atj-tetris .tt-next{height:52px}.atj-tetris .tt-header{margin-bottom:10px}.atj-tetris h2{font-size:22px}.atj-tetris .tt-subtitle{font-size:10px}}
+  `;
+
+  class ATJTetris {
+    constructor(rootElement, options = {}) {
+      if (!rootElement) throw new Error('ATJTetris requires a root element.');
+      this.root = rootElement;
+      this.options = options;
+      this.best = this.readBest();
+      this.mounted = false;
+      this.running = false;
+      this.paused = false;
+      this.gameOver = false;
+      this.frame = 0;
+      this.cleanup = [];
+      this._tick = this.tick.bind(this);
+      this._key = this.key.bind(this);
+    }
+
+    readBest() {
+      try { return Math.max(0, Number(localStorage.getItem(STORAGE)) || 0); } catch (_) { return 0; }
+    }
+
+    mount() {
+      if (this.mounted) return this;
+      this.mounted = true;
+      this.root.innerHTML = `<style>${CSS}</style><section class="atj-tetris" tabindex="0" aria-label="Tetris arcade game">
+        <header class="tt-header"><div><p class="tt-kicker">The loading lounge · Tetris</p><h2>STACK THE STAGE</h2><p class="tt-subtitle">A little play before the big show.</p></div><button class="tt-close" type="button" aria-label="Close arcade">×</button></header>
+        <div class="tt-body"><div class="tt-board-wrap"><canvas class="tt-board" aria-label="Tetris board. Use the arrow keys or the buttons below to play." role="img"></canvas><div class="tt-status" hidden><strong></strong><span></span><button type="button"></button></div></div>
+          <aside class="tt-sidebar"><div><span class="tt-label">Your score</span><div class="tt-score" data-stat="score">00000</div></div><div><span class="tt-label">Personal best</span><div class="tt-small-value" data-stat="best">00000</div></div><div><span class="tt-label">Up next</span><canvas class="tt-next" aria-label="Next tetromino preview" role="img"></canvas></div><div class="tt-stats"><div><span class="tt-label">Level</span><div class="tt-small-value" data-stat="level">01</div></div><div><span class="tt-label">Lines</span><div class="tt-small-value" data-stat="lines">00</div></div></div><div class="tt-buttons"><button type="button" class="tt-button tt-button-primary" data-action="pause">Pause</button><button type="button" class="tt-button" data-action="restart">Start again ↻</button></div></aside>
+        </div><div class="tt-controls" aria-label="Touch controls"><button type="button" class="tt-control" data-action="left" aria-label="Move left">←</button><button type="button" class="tt-control" data-action="rotate" aria-label="Rotate clockwise">↻</button><button type="button" class="tt-control" data-action="right" aria-label="Move right">→</button><button type="button" class="tt-control" data-action="drop" aria-label="Hard drop">↓ <span>DROP</span></button></div><p class="tt-help">← → move &nbsp; ↑ / X rotate &nbsp; Z reverse &nbsp; ↓ soft drop &nbsp; Space drop &nbsp; P pause</p><div class="tt-footer"><i class="tt-dot"></i>Clear a row. Make room for the next big thing.</div><div class="tt-live" aria-live="polite"></div>
+      </section>`;
+      this.element = this.root.querySelector('.atj-tetris');
+      this.canvas = this.root.querySelector('.tt-board');
+      this.ctx = this.canvas.getContext('2d');
+      this.nextCanvas = this.root.querySelector('.tt-next');
+      this.nextCtx = this.nextCanvas.getContext('2d');
+      this.status = this.root.querySelector('.tt-status');
+      this.pauseButton = this.root.querySelector('[data-action="pause"]');
+      this.statusButton = this.status.querySelector('button');
+      this.live = this.root.querySelector('.tt-live');
+      this.bind(this.root, 'click', (event) => {
+        const button = event.target.closest('button');
+        if (!button || !this.root.contains(button)) return;
+        if (button.classList.contains('tt-close')) {
+          this.pause();
+          if (typeof this.options.onExit === 'function') this.options.onExit();
+          return;
+        }
+        if (button === this.statusButton) {
+          if (this.gameOver) { this.reset(); this.start(); } else this.resume();
+          this.element.focus({preventScroll:true});
+          return;
+        }
+        this.action(button.dataset.action);
+        this.element.focus({preventScroll:true});
+      });
+      this.bind(document, 'keydown', this._key);
+      this.bind(document, 'visibilitychange', () => { if (document.hidden && this.running && !this.paused) this.pause(); });
+      this.bind(window, 'blur', () => { if (this.running && !this.paused) this.pause(); });
+      if (typeof ResizeObserver !== 'undefined') {
+        this.resizeObserver = new ResizeObserver(() => this.resize());
+        this.resizeObserver.observe(this.canvas.parentElement);
+      } else this.bind(window, 'resize', () => this.resize());
+      this.reset();
+      this.resize();
+      return this;
+    }
+
+    bind(target, type, fn) {
+      target.addEventListener(type, fn);
+      this.cleanup.push(() => target.removeEventListener(type, fn));
+    }
+
+    reset() {
+      this.board = Array.from({length:20}, () => Array(10).fill(null));
+      this.bag = [];
+      this.score = 0;
+      this.lines = 0;
+      this.level = 1;
+      this.gameOver = false;
+      this.paused = false;
+      this.fallTime = 0;
+      this.lockTime = 0;
+      this.lockResets = 0;
+      this.clearFlash = 0;
+      this.clearedRows = [];
+      this.nextType = this.takeBag();
+      this.spawn();
+      this.syncStats();
+      this.syncStatus();
+      this.draw();
+    }
+
+    takeBag() {
+      if (!this.bag.length) {
+        this.bag = Object.keys(SHAPES);
+        for (let i=this.bag.length-1; i>0; i--) {
+          const j = Math.floor(Math.random()*(i+1));
+          [this.bag[i],this.bag[j]] = [this.bag[j],this.bag[i]];
+        }
+      }
+      return this.bag.pop();
+    }
+
+    spawn() {
+      const type = this.nextType;
+      this.piece = {type, matrix:SHAPES[type].map(row => row.slice()), x:type === 'O' ? 4 : 3, y:-1, rotation:0};
+      this.nextType = this.takeBag();
+      this.fallTime = 0;
+      this.lockTime = 0;
+      this.lockResets = 0;
+      if (this.collides(this.piece.matrix,this.piece.x,this.piece.y)) this.finish();
+      this.drawNext();
+    }
+
+    collides(matrix, x, y) {
+      for (let row=0;row<matrix.length;row++) for (let col=0;col<matrix[row].length;col++) {
+        if (!matrix[row][col]) continue;
+        const bx=x+col, by=y+row;
+        if (bx<0 || bx>=10 || by>=20 || (by>=0 && this.board[by][bx])) return true;
+      }
+      return false;
+    }
+
+    grounded() { return this.collides(this.piece.matrix,this.piece.x,this.piece.y+1); }
+
+    move(dx) {
+      if (!this.canPlay() || this.collides(this.piece.matrix,this.piece.x+dx,this.piece.y)) return;
+      const wasGrounded = this.grounded();
+      this.piece.x += dx;
+      if (wasGrounded && this.lockResets < 12) { this.lockTime=0; this.lockResets++; }
+      this.draw();
+    }
+
+    rotate(direction) {
+      if (!this.canPlay() || this.piece.type === 'O') return;
+      const p = this.piece;
+      const n = p.matrix.length;
+      const rotated = Array.from({length:n},(_,y) => Array.from({length:n},(_,x) => direction>0 ? p.matrix[n-1-x][y] : p.matrix[x][n-1-y]));
+      const nextRotation = (p.rotation+(direction>0?1:3))%4;
+      const kicks = (p.type === 'I' ? I_KICKS : KICKS)[p.rotation+'>'+nextRotation] || [[0,0]];
+      const wasGrounded = this.grounded();
+      for (const [dx,dy] of kicks) {
+        if (!this.collides(rotated,p.x+dx,p.y-dy)) {
+          p.matrix=rotated; p.x+=dx; p.y-=dy; p.rotation=nextRotation;
+          if (wasGrounded && this.lockResets<12) { this.lockTime=0; this.lockResets++; }
+          this.draw();
+          return;
+        }
+      }
+    }
+
+    softDrop() {
+      if (!this.canPlay()) return;
+      if (!this.grounded()) { this.piece.y++; this.addScore(1); this.fallTime=0; this.lockTime=0; }
+      this.draw();
+    }
+
+    hardDrop() {
+      if (!this.canPlay()) return;
+      let distance=0;
+      while (!this.grounded()) { this.piece.y++; distance++; }
+      this.addScore(distance*2);
+      this.lock();
+      this.draw();
+    }
+
+    lock() {
+      let overflow=false;
+      this.piece.matrix.forEach((row,y) => row.forEach((cell,x) => {
+        if (!cell) return;
+        const by=this.piece.y+y;
+        if (by<0) overflow=true;
+        else this.board[by][this.piece.x+x]=this.piece.type;
+      }));
+      if (overflow) { this.finish(); return; }
+      const full=[];
+      this.board.forEach((row,i) => { if (row.every(Boolean)) full.push(i); });
+      if (full.length) {
+        this.board=this.board.filter((_,i) => !full.includes(i));
+        while (this.board.length<20) this.board.unshift(Array(10).fill(null));
+        this.addScore([0,100,300,500,800][full.length]*this.level);
+        this.lines+=full.length;
+        this.level=Math.floor(this.lines/10)+1;
+        this.clearFlash=180;
+        this.clearedRows=full;
+        this.live.textContent=(full.length===4?'Tetris! Four rows cleared.':full.length+' row'+(full.length>1?'s':'')+' cleared.')+' Score '+this.score+'.';
+        this.syncStats();
+      }
+      this.spawn();
+    }
+
+    addScore(value) {
+      this.score+=value;
+      if (this.score>this.best) {
+        this.best=this.score;
+        try { localStorage.setItem(STORAGE,String(this.best)); } catch (_) { /* Private browsing may deny storage. */ }
+      }
+      this.syncStats();
+      if (typeof this.options.onScore==='function') this.options.onScore(this.score,{lines:this.lines,level:this.level,best:this.best});
+    }
+
+    start() {
+      if (!this.mounted) this.mount();
+      if (this.gameOver) this.reset();
+      this.running=true;
+      this.paused=false;
+      this.lastTime=performance.now();
+      this.syncStatus();
+      if (!this.frame) this.frame=requestAnimationFrame(this._tick);
+      this.resize();
+      return this;
+    }
+
+    pause() {
+      if (!this.mounted) return this;
+      this.paused=true;
+      if (this.frame) cancelAnimationFrame(this.frame);
+      this.frame=0;
+      this.syncStatus();
+      return this;
+    }
+
+    resume() { return this.start(); }
+
+    finish() {
+      this.gameOver=true;
+      this.running=false;
+      if (this.frame) cancelAnimationFrame(this.frame);
+      this.frame=0;
+      this.syncStatus();
+      if (this.live) this.live.textContent='Show over. Final score '+this.score+'. Start again to play another round.';
+    }
+
+    visible() {
+      return !!(this.root.isConnected && this.root.getClientRects().length && !this.root.closest('[hidden]'));
+    }
+
+    canPlay() { return this.running && !this.paused && !this.gameOver && this.visible(); }
+
+    tick(now) {
+      this.frame=0;
+      if (!this.running || this.paused || this.gameOver) return;
+      const dt=Math.min(now-this.lastTime,80);
+      this.lastTime=now;
+      if (this.visible()) {
+        this.clearFlash=Math.max(0,this.clearFlash-dt);
+        if (this.grounded()) {
+          this.lockTime+=dt;
+          if (this.lockTime>=450) this.lock();
+        } else {
+          this.lockTime=0;
+          this.fallTime+=dt;
+          const speed=Math.max(65,850*Math.pow(.79,this.level-1));
+          if (this.fallTime>=speed) { this.piece.y++; this.fallTime=0; }
+        }
+        this.draw();
+      }
+      if (this.running && !this.paused && !this.gameOver) this.frame=requestAnimationFrame(this._tick);
+    }
+
+    action(action) {
+      if (action==='restart') { this.reset(); this.start(); return; }
+      if (action==='pause') { this.paused ? this.resume() : this.pause(); return; }
+      if (action==='left') this.move(-1);
+      if (action==='right') this.move(1);
+      if (action==='rotate') this.rotate(1);
+      if (action==='drop') this.hardDrop();
+    }
+
+    key(event) {
+      if (!this.visible() || !this.mounted || !this.running) return;
+      const target=event.target;
+      if (target && (target.matches('input,textarea,select') || target.isContentEditable)) return;
+      if (event.ctrlKey || event.altKey || event.metaKey) return;
+      const key=event.key.toLowerCase();
+      // Let focused controls retain their native Space-key activation.
+      if (key===' ' && target?.closest('button,a[href],summary')) return;
+      if (!['arrowleft','arrowright','arrowdown','arrowup','x','z',' ','p'].includes(key)) return;
+      event.preventDefault();
+      // Prevent the parent walkthrough from interpreting arcade movement keys.
+      event.stopPropagation();
+      if (key==='p') { if (!event.repeat) this.paused ? this.resume() : this.pause(); return; }
+      if (this.paused) return;
+      if (key==='arrowleft') this.move(-1);
+      if (key==='arrowright') this.move(1);
+      if (key==='arrowdown') this.softDrop();
+      if ((key==='arrowup' || key==='x') && !event.repeat) this.rotate(1);
+      if (key==='z' && !event.repeat) this.rotate(-1);
+      if (key===' ' && !event.repeat) this.hardDrop();
+    }
+
+    syncStats() {
+      if (!this.mounted) return;
+      const values={score:String(this.score).padStart(5,'0'),best:String(this.best).padStart(5,'0'),level:String(this.level).padStart(2,'0'),lines:String(this.lines).padStart(2,'0')};
+      for (const [name,value] of Object.entries(values)) {
+        const node=this.root.querySelector('[data-stat="'+name+'"]');
+        if (node && node.textContent!==value) node.textContent=value;
+      }
+    }
+
+    syncStatus() {
+      if (!this.status) return;
+      this.status.hidden=!this.paused && !this.gameOver;
+      this.pauseButton.textContent=this.paused?'Resume':'Pause';
+      this.status.querySelector('strong').textContent=this.gameOver?'SHOW OVER':'ON INTERMISSION';
+      this.status.querySelector('span').textContent=this.gameOver?'You made '+this.score.toLocaleString()+' points. Another encore?':'Your stage is exactly where you left it.';
+      this.statusButton.textContent=this.gameOver?'Play another round ↗':'Back to the stage ↗';
+    }
+
+    resize() {
+      if (!this.canvas) return;
+      const dpr=Math.min(window.devicePixelRatio||1,2);
+      const rect=this.canvas.getBoundingClientRect();
+      const w=rect.width||220;
+      const h=rect.height||440;
+      this.canvas.width=Math.round(w*dpr);
+      this.canvas.height=Math.round(h*dpr);
+      this.boardWidth=w; this.boardHeight=h;
+      this.ctx.setTransform(dpr,0,0,dpr,0,0);
+      const nextRect=this.nextCanvas.getBoundingClientRect();
+      const nw=nextRect.width||88, nh=nextRect.height||70;
+      this.nextCanvas.width=Math.round(nw*dpr); this.nextCanvas.height=Math.round(nh*dpr);
+      this.nextWidth=nw; this.nextHeight=nh;
+      this.nextCtx.setTransform(dpr,0,0,dpr,0,0);
+      this.draw(); this.drawNext();
+    }
+
+    block(ctx,x,y,w,h,color,ghost) {
+      const inset=Math.max(1,w*.065);
+      if (ghost) {
+        ctx.strokeStyle=color; ctx.globalAlpha=.38; ctx.lineWidth=1;
+        ctx.strokeRect(x+inset+1,y+inset+1,w-inset*2-2,h-inset*2-2);
+        ctx.globalAlpha=1;
+        return;
+      }
+      ctx.fillStyle=color;
+      ctx.fillRect(x+inset,y+inset,w-inset*2,h-inset*2);
+      ctx.fillStyle='rgba(255,255,255,.2)';
+      ctx.fillRect(x+inset+1,y+inset,w-inset*2-2,Math.max(1,h*.08));
+      ctx.fillStyle='rgba(0,0,0,.12)';
+      ctx.fillRect(x+inset,y+h-inset-Math.max(1,h*.08),w-inset*2,Math.max(1,h*.08));
+    }
+
+    draw() {
+      if (!this.ctx || !this.board || !this.boardWidth) return;
+      const ctx=this.ctx, w=this.boardWidth, h=this.boardHeight, cw=w/10, ch=h/20;
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle='#10150e'; ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle='rgba(152,178,123,.055)'; ctx.lineWidth=.5;
+      ctx.beginPath();
+      for(let x=1;x<10;x++){ctx.moveTo(x*cw,0);ctx.lineTo(x*cw,h);}
+      for(let y=1;y<20;y++){ctx.moveTo(0,y*ch);ctx.lineTo(w,y*ch);}
+      ctx.stroke();
+      this.board.forEach((row,y) => row.forEach((type,x) => { if(type) this.block(ctx,x*cw,y*ch,cw,ch,COLORS[type],false); }));
+      if (this.piece && !this.gameOver) {
+        let gy=this.piece.y;
+        while(!this.collides(this.piece.matrix,this.piece.x,gy+1)) gy++;
+        for (const [py,ghost] of [[gy,true],[this.piece.y,false]]) {
+          this.piece.matrix.forEach((row,y)=>row.forEach((cell,x)=>{
+            if(cell && py+y>=0) this.block(ctx,(this.piece.x+x)*cw,(py+y)*ch,cw,ch,COLORS[this.piece.type],ghost);
+          }));
+        }
+      }
+      if(this.clearFlash>0) {
+        ctx.fillStyle='rgba(213,251,166,'+(this.clearFlash/180*.7)+')';
+        this.clearedRows.forEach(y=>ctx.fillRect(0,y*ch,w,ch));
+      }
+    }
+
+    drawNext() {
+      if(!this.nextCtx || !this.nextWidth || !this.nextType) return;
+      const ctx=this.nextCtx,w=this.nextWidth,h=this.nextHeight;
+      ctx.clearRect(0,0,w,h);
+      const matrix=SHAPES[this.nextType],filled=[];
+      matrix.forEach((row,y)=>row.forEach((cell,x)=>{if(cell)filled.push([x,y]);}));
+      const minX=Math.min(...filled.map(p=>p[0])),maxX=Math.max(...filled.map(p=>p[0]));
+      const minY=Math.min(...filled.map(p=>p[1])),maxY=Math.max(...filled.map(p=>p[1]));
+      const cell=Math.min(19,w/4,h/3),ox=(w-(maxX-minX+1)*cell)/2,oy=(h-(maxY-minY+1)*cell)/2;
+      filled.forEach(([x,y])=>this.block(ctx,ox+(x-minX)*cell,oy+(y-minY)*cell,cell,cell,COLORS[this.nextType],false));
+      this.nextCanvas.setAttribute('aria-label','Next piece: '+this.nextType+' tetromino');
+    }
+
+    destroy() {
+      if(this.frame)cancelAnimationFrame(this.frame);
+      this.frame=0; this.running=false;
+      this.cleanup.forEach(fn=>fn()); this.cleanup=[];
+      if(this.resizeObserver)this.resizeObserver.disconnect();
+      this.root.innerHTML=''; this.mounted=false;
+    }
+  }
+
+  window.ATJTetris=ATJTetris;
+})();
+
+</script>
+<script>
+/* Space War — original local arcade; no runtime dependencies. */
+(()=>{'use strict';
+class SpaceWar{
+ constructor(root){
+  this.root=root;root.innerHTML=`<section class="space-game" tabindex="0" aria-label="Space War game"><div class="space-head"><h2>Space War</h2><span class="space-score" aria-live="polite">Score 0 · Lives 3</span></div><canvas width="480" height="420" aria-label="Space War playfield"></canvas><p class="space-status" role="status">Defend the experience. Destroy the incoming ships.</p><div class="space-controls"><button data-action="left" aria-label="Move ship left">←</button><button data-action="fire">FIRE</button><button data-action="right" aria-label="Move ship right">→</button><button data-action="pause">Pause</button><button data-action="reset">Restart</button></div><p>← → or A / D to move · Space to fire · P to pause. Touch controls work too.</p></section>`;
+  this.element=root.firstElementChild;this.canvas=root.querySelector('canvas');this.ctx=this.canvas.getContext('2d');this.keys=new Set();this.running=false;this.reset();
+  this.element.addEventListener('keydown',e=>{
+   const k=e.key.toLowerCase();if(['arrowleft','arrowright','a','d',' ','p'].includes(k)){e.preventDefault();if(k==='p'&&!e.repeat){this.running?this.pause():this.resume();return;}this.keys.add(k);}
+  });this.element.addEventListener('keyup',e=>this.keys.delete(e.key.toLowerCase()));this.element.addEventListener('blur',()=>this.keys.clear());
+  root.querySelectorAll('[data-action]').forEach(b=>{
+   const k={left:'a',right:'d',fire:' '}[b.dataset.action];
+   if(k){b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);this.keys.add(k);this.element.focus();});['pointerup','pointercancel','lostpointercapture'].forEach(t=>b.addEventListener(t,()=>this.keys.delete(k)));}
+   else b.addEventListener('click',()=>{if(b.dataset.action==='reset'){this.reset();this.resume();}else this.running?this.pause():this.resume();this.element.focus();});
+  });
+  window.addEventListener('blur',()=>this.pause());
+ }
+ reset(){this.x=240;this.lives=3;this.score=0;this.wave=1;this.bullets=[];this.enemies=[];this.cooldown=0;this.spawnTimer=0;this.invincible=0;this.over=false;this.keys.clear();this.status('Defend the experience. Destroy the incoming ships.');this.draw();}
+ status(s){this.root.querySelector('.space-status').textContent=s;}
+ pause(){this.running=false;cancelAnimationFrame(this.frame);this.keys.clear();if(!this.over)this.status('Paused · press Resume or P to continue.');this.root.querySelector('[data-action="pause"]').textContent='Resume';}
+ resume(){if(this.running||this.over)return;this.running=true;this.last=0;this.status('Defend the experience. Destroy the incoming ships.');this.root.querySelector('[data-action="pause"]').textContent='Pause';this.frame=requestAnimationFrame(t=>this.tick(t));}
+ tick(t){if(!this.running)return;const dt=this.last?Math.min((t-this.last)/1000,.04):0;this.last=t;this.update(dt);this.draw();if(this.running)this.frame=requestAnimationFrame(t=>this.tick(t));}
+ update(dt){
+  this.x=Math.max(18,Math.min(462,this.x+((this.keys.has('d')||this.keys.has('arrowright'))-(this.keys.has('a')||this.keys.has('arrowleft')))*280*dt));
+  this.cooldown-=dt;this.spawnTimer-=dt;this.invincible-=dt;
+  if(this.keys.has(' ')&&this.cooldown<=0){this.bullets.push({x:this.x,y:365});this.cooldown=.16;}
+  this.wave=1+Math.floor(this.score/100);
+  if(this.spawnTimer<=0){this.enemies.push({x:22+Math.random()*436,y:-15,v:55+this.wave*10});this.spawnTimer=Math.max(.22,1-this.wave*.075);}
+  this.bullets.forEach(b=>b.y-=430*dt);this.enemies.forEach(e=>e.y+=e.v*dt);
+  for(const e of this.enemies){for(const b of this.bullets){if(!e.dead&&!b.dead&&Math.abs(e.x-b.x)<19&&Math.abs(e.y-b.y)<18){e.dead=true;b.dead=true;this.score+=10;}}
+   if(!e.dead&&(e.y>430||(Math.abs(e.x-this.x)<27&&Math.abs(e.y-385)<23))){e.dead=true;if(this.invincible<=0){this.lives--;this.invincible=.5;}}
+  }
+  this.bullets=this.bullets.filter(b=>!b.dead&&b.y>-20);this.enemies=this.enemies.filter(e=>!e.dead);
+  if(this.lives<=0){this.over=true;this.pause();let best=0;try{best=Math.max(this.score,Number(localStorage.getItem('atj-space-best'))||0);localStorage.setItem('atj-space-best',String(best));}catch(_){}this.status(`Game over · Score ${this.score} · Best ${best}. Restart to play again.`);}
+ }
+ draw(){const c=this.ctx;if(!c)return;c.fillStyle='#0c101e';c.fillRect(0,0,480,420);
+  c.fillStyle='#7786a7';for(let i=0;i<65;i++){c.fillRect((i*137)%480,(i*71)%420,i%4===0?2:1,i%4===0?2:1);}
+  c.strokeStyle='#283148';c.beginPath();c.moveTo(0,350);c.lineTo(480,350);c.stroke();
+  c.fillStyle=this.invincible>0?'#fff':'#c9ed6b';c.beginPath();c.moveTo(this.x,363);c.lineTo(this.x-18,400);c.lineTo(this.x,392);c.lineTo(this.x+18,400);c.closePath();c.fill();c.fillStyle='#91d5cb';c.fillRect(this.x-4,399,8,10);
+  c.fillStyle='#c9ed6b';this.bullets.forEach(b=>c.fillRect(b.x-2,b.y-6,4,14));
+  for(const e of this.enemies){c.fillStyle='#bea9ff';c.beginPath();c.moveTo(e.x,e.y+14);c.lineTo(e.x-18,e.y-10);c.lineTo(e.x+18,e.y-10);c.closePath();c.fill();c.fillStyle='#efb0c8';c.fillRect(e.x-4,e.y-8,8,8);}
+  this.root.querySelector('.space-score').textContent=`Score ${this.score} · Lives ${Math.max(0,this.lives)} · Wave ${this.wave}`;
+  if(this.over){c.fillStyle='#0c101ed9';c.fillRect(0,155,480,90);c.fillStyle='#c9ed6b';c.font='bold 28px Arial';c.textAlign='center';c.fillText('GAME OVER',240,208);}
+ }
+}
+window.ATJSpaceWar=SpaceWar;
+})();
+
+</script>
+<script>
+/* All That Jazz · experience orchestration. No network or third-party runtime. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const projects = [
+    { id:'taxi', number:'01', name:'The Taxi Project', title:'A city.\nA moving canvas.', category:'BRAND ACTIVATION', client:'ASIAN PAINTS / THE TAXI PROJECT 2025', year:'2025', place:'Kolkata, India', color:'#efd790', summary:'Kolkata’s iconic yellow taxis became moving canvases for a celebration of Pujo. The campaign brought art into the everyday life of the city. All That Jazz is credited among the project’s collaborating partners.', award:'Silver — Integrated Marketing Campaign\nSilver — Road Show Activation', mood:'A city in celebration.' },
+    { id:'japan', number:'02', name:'Privilege Club · Japan', title:'A different world.\nA shared moment.', category:'DESTINATION EXPERIENCE', client:'ASIAN PAINTS / PRIVILEGE CLUB JAPAN 2025', year:'2025', place:'Japan', color:'#e3b9ce', summary:'A destination celebration for the Asian Paints Privilege Club. Step into an imagined Japanese garden: sculptural cherry blossoms, an open pavilion and a stage framed by a striking red gate.', award:'Silver — Celebratory Event', mood:'Step into the destination garden.' },
+    { id:'usa', number:'03', name:'Privilege Club · USA', title:'Big horizons.\nLasting connections.', category:'CHANNEL EXPERIENCE', client:'ASIAN PAINTS / PRIVILEGE CLUB SUPER PREMIUM MEMBERS USA 2025', year:'2025', place:'USA', color:'#bad9ed', summary:'An experience for Asian Paints Privilege Club Super Premium Members in the USA. Our virtual room imagines the energy of a city after dark, with a skyline-inspired set and a luminous live stage.', award:'Silver — Trade / Channel Event\nBudget above ₹1 crore', mood:'A skyline full of possibilities.' },
+    { id:'elite', number:'04', name:'Elite Night', title:'An evening\nto remember.', category:'CORPORATE EXPERIENCE', client:'ASIAN PAINTS / ELITE NIGHT 2025', year:'2025', place:'India', color:'#d9c3a1', summary:'Asian Paints Elite Night 2025 received recognition in the domestic MICE category. This imagined gala room brings that sense of occasion into the venue through golden arches, a grand stage and intimate tables.', award:'Silver — Domestic MICE', mood:'Take your place at the gala.' },
+    { id:'aimc', number:'05', name:'AIMC 2026', title:'Great minds.\nOne shared stage.', category:'CONFERENCE & CONCLAVE', client:'ALL INDIA MARKETING CONCLAVE / AIMC 2026', year:'2026', place:'Marketing conclave', color:'#c3c0e8', summary:'AIMC brings the All India Marketing Conclave into the story of All That Jazz. Explore our imagined conference theatre, built around a shared stage, open conversations and the energy of people coming together.', award:'Bronze — Professional Conference Organizer\nBronze — Trade / Channel Event, above ₹1 crore', mood:'Where the conversation begins.' }
+  ];
+  const byId = Object.fromEntries(projects.map(p => [p.id, p]));
+  const source = 'https://www.eemaindia.com/eemaxglobal/winners.php';
+  let engine, arcade, spacewar, ready = false, failed = false, exploring = false, currentZone = null, detailId = null;
+  let labels = [], toastTimer, soundContext, soundGain, soundOn = false;
+  const visited = new Set();
+  try { const saved = JSON.parse(localStorage.getItem('atj-visited') || '[]'); if (Array.isArray(saved)) saved.filter(id => byId[id]).forEach(id => visited.add(id)); } catch (_) {}
+
+  function art(id) {
+    const color = byId[id].color;
+    const base = '<ellipse cx="190" cy="190" rx="119" ry="13" fill="#211a3b" opacity=".12"/><path d="M54 158 192 94 313 155 177 213Z" fill="#f5efe6"/><path d="M54 158 177 213 177 225 54 170Z" fill="#bbaed0"/><path d="M177 213 313 155 313 166 177 225Z" fill="#9684b3"/>';
+    const truss = '<path d="M83 170V75L264 100V180M83 75 111 60 294 86 264 100M294 86V164" fill="none" stroke="#514960" stroke-width="4"/><path d="M92 77 108 61M119 80 135 65M148 85 164 70M176 89 192 74M205 93 221 78M234 97 250 82" stroke="#514960" stroke-width="2"/>';
+    const scenes = {
+      taxi:'<path d="M72 165 188 112 287 159 174 208Z" fill="#555060"/><path d="M108 171 151 151M180 138 213 123" stroke="#eee7d4" stroke-width="3" stroke-dasharray="11 6"/><g transform="translate(106 126)"><path d="M0 11 40-8 86 14 44 34Z" fill="#ffcf49"/><path d="M0 11 44 34 44 53 0 30Z" fill="#e4a225"/><path d="M44 34 86 14 86 32 44 53Z" fill="#ffe076"/><path d="M19 8 42-3 65 8 44 19Z" fill="#f9dc7f"/><path d="M19 8 44 19 44 34 12 18Z" fill="#536471"/><path d="M44 19 65 8 74 20 44 34Z" fill="#78929a"/><ellipse cx="12" cy="33" rx="6" ry="9" fill="#353241"/><ellipse cx="70" cy="37" rx="6" ry="9" fill="#353241"/><path d="m26 24 6-2 7 6-6 3Z" fill="#ec7eae"/></g><g transform="translate(58 -35) scale(.66)"><path d="M175 160 215 141 254 159 213 178Z" fill="#ffda64"/><path d="M175 160 213 178 213 196 175 179Z" fill="#e8a92e"/><path d="M213 178 254 159 254 177 213 196Z" fill="#f2c74d"/><path d="M187 157 213 169 238 157 215 145Z" fill="#788d9b"/><ellipse cx="184" cy="179" rx="5" ry="8" fill="#353241"/><ellipse cx="239" cy="183" rx="5" ry="8" fill="#353241"/></g><path d="M90 134V68L177 108V147Z" fill="#eac9b6"/><path d="M99 80 169 112 169 126 99 95Z" fill="#b7638f"/><path d="M114 110 127 116 127 128 114 122Z" fill="#8badb1"/>',
+      japan:'<path d="M158 196 184 184 184 89 172 85 158 91Z" fill="#bb4d48"/><path d="M228 161 246 153 246 64 232 65 228 75Z" fill="#c75850"/><path d="M133 77 219 37 272 61 190 103Z" fill="#d3655b"/><path d="M133 77 190 103 190 114 133 87Z" fill="#a64447"/><path d="M190 103 272 61 272 73 190 114Z" fill="#b94f4d"/><path d="M151 106 229 71 252 81 176 118Z" fill="#d57569"/><path d="M96 154V91" stroke="#8b6676" stroke-width="8"/><g fill="#edacc8"><circle cx="96" cy="77" r="25"/><circle cx="70" cy="87" r="20"/><circle cx="115" cy="91" r="24"/><circle cx="91" cy="105" r="24"/></g><g fill="#f7c6d9"><circle cx="77" cy="72" r="13"/><circle cx="102" cy="60" r="15"/></g><path d="M206 188 270 158 248 149 183 179Z" fill="#a6bda9"/><ellipse cx="246" cy="160" rx="21" ry="10" fill="#8bab94"/>',
+      usa:truss+'<path d="M120 141V55L143 45 159 53V147Z" fill="#8ca1c4"/><path d="M163 153V84L186 74 202 82V166Z" fill="#a3b4d0"/><path d="M211 141V43L231 34 247 42V155Z" fill="#7390b2"/><path d="M231 34V17" stroke="#62758c" stroke-width="3"/><path d="M115 170 187 137 260 173 187 207Z" fill="#a491d0"/><path d="M131 108 212 145 250 127V165L212 184 131 147Z" fill="#2c2f4f"/><path d="M143 125 208 155 237 141" fill="none" stroke="#bef3d6" stroke-width="4"/><g fill="#e7d889"><path d="M128 69v9l7 3v-9Zm0 21v9l7 3v-9Zm46 8v9l7 3v-9Zm44-38v9l7 3v-9Zm0 20v9l7 3v-9Z"/></g>',
+      elite:'<path d="M89 161V92Q89 46 132 64L193 92Q218 103 218 138V189" fill="none" stroke="#c29b4d" stroke-width="11"/><path d="M104 165V97Q104 66 134 80L185 103Q203 111 203 137V180" fill="none" stroke="#ead6a7" stroke-width="4"/><path d="M117 164 175 137 253 174 194 202Z" fill="#6f586e"/><path d="M143 115 185 134V171L143 151Z" fill="#a989b1"/><g fill="#f4e0ba"><ellipse cx="101" cy="184" rx="20" ry="10"/><ellipse cx="270" cy="157" rx="18" ry="9"/></g><g stroke="#9b8192" stroke-width="3"><path d="M101 184v14M270 157v14"/></g><g fill="#debc76"><circle cx="101" cy="178" r="5"/><circle cx="270" cy="151" r="5"/></g>',
+      aimc:truss+'<path d="M116 94 249 112 249 151 116 137Z" fill="#6c64a1"/><path d="M126 103 240 118 240 139 126 128Z" fill="#b3b5f1"/><path d="M105 150 200 108 270 143 176 188Z" fill="#ad9ecc"/><path d="M139 113 169 128 169 153 139 138Z" fill="#ddd7ed"/>'+[0,1,2].map(r=>[0,1,2,3].map(c=>{const x=102+c*25+r*13,y=162+c*11-r*6;return `<path d="M${x} ${y}v-10l12 6v10Z" fill="#7c698e"/><path d="m${x} ${y} 12 6 8-4-12-6Z" fill="#b1a1c7"/>`;}).join('')).join('')
+    };
+    return `<svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="360" height="240" fill="${color}"/>${base}${scenes[id]}</svg>`;
+  }
+
+  function toast(message) { clearTimeout(toastTimer); $('toast').textContent = message; $('toast').classList.add('show'); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3400); }
+  function modalOpen() { return !!document.querySelector('dialog[open]'); }
+  function openModal(id) {
+    engine?.setKeys(false);
+    const dialog = $(id);
+    if (!dialog.open) dialog.showModal();
+  }
+  function closeModal(id) { if ($(id).open) $(id).close(); }
+  document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => closeModal(button.dataset.close)));
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+    dialog.addEventListener('close', () => {
+      if (dialog.id === 'arcade-dialog') {arcade?.pause();spacewar?.pause();}
+      if (!modalOpen()) { engine?.setKeys(exploring && !failed); if (exploring && !failed) $('world').focus({preventScroll:true}); }
+    });
+  });
+
+  function updateVisited() {
+    $('visited-count').textContent = `${visited.size} / 5`;
+    document.querySelectorAll('.zone-step').forEach(el => { el.classList.toggle('visited',visited.has(el.dataset.zone)); el.classList.toggle('active',el.dataset.zone === currentZone); });
+    try { localStorage.setItem('atj-visited',JSON.stringify([...visited])); } catch (_) {}
+  }
+  function showProject(id) {
+    const p = byId[id]; if (!p) return;
+    detailId = id; visited.add(id); updateVisited();
+    $('detail-number').textContent = `${p.number} / 05`;
+    $('detail-type').textContent = p.category;
+    $('detail-client').textContent = p.client;
+    $('detail-title').textContent = p.title;
+    $('detail-summary').textContent = p.summary;
+    $('detail-award').textContent = p.award;
+    $('detail-award').style.whiteSpace = 'pre-line';
+    $('detail-facts').innerHTML = `<div><span>CHAPTER</span><strong>${p.year}</strong></div><div><span>SETTING</span><strong>${p.place}</strong></div>`;
+    $('detail-art').innerHTML = art(id); $('detail-art').style.background = p.color;
+    $('detail-source').href = source;
+    openModal('project-detail');
+  }
+  function setZone(id) {
+    currentZone = id;
+    const p = byId[id];
+    const game = id==='tetris'||id==='spacewar';
+    $('nearby-project').hidden = !id || !exploring;
+    $('nearby-count').textContent = p?.number || '↗';
+    $('nearby-category').textContent = p?.category || (game?'ATJ ARCADE · PRESS E TO PLAY':'YOUR NEXT CHAPTER');
+    $('nearby-name').textContent = p?.name || (game?(id==='tetris'?'Tetris':'Space War'):'Let’s make it happen');
+    $('location-title').textContent = p?.name || (id === 'contact' ? 'The next big moment' : 'The arrival');
+    $('location-description').textContent = p?.mood || (id === 'contact' ? 'Bring your ideas. We’ll bring the possibilities.' : 'A whole world of possibilities. Find your next story.');
+    $('open-nearby').setAttribute('aria-label',p ? `Explore ${p.name}` : 'Open contact page');
+    updateVisited();
+  }
+  function openNearby() { if(currentZone==='tetris'||currentZone==='spacewar')openArcade(currentZone);else if(currentZone === 'contact') window.location.href = 'contact.html'; else if(currentZone) showProject(currentZone); }
+  function navigateTo(id) {
+    closeModal('project-directory');
+    if (id==='tetris'||id==='spacewar'){openArcade(id);return;}
+    if (failed) { if (id === 'contact') window.location.href = 'contact.html'; else showProject(id); return; }
+    if (!ready) return;
+    if (!exploring) enterWorld();
+    if (currentZone === id) { openNearby(); return; }
+    engine.goToZone(id); $('world').focus({preventScroll:true});
+    toast(`On our way to ${byId[id]?.name || 'your next chapter'}.`);
+  }
+  function enterWorld() {
+    if (failed) { openModal('project-directory'); return; }
+    if (!ready) return;
+    exploring = true;
+    $('experience').classList.replace('intro-mode','exploring');
+    document.querySelector('.hero').inert = true;
+    document.querySelector('.hero').setAttribute('aria-hidden','true');
+    $('explore-ui').hidden = false;
+    engine.setKeys(!modalOpen()); engine.setView('follow'); $('camera-toggle').textContent='TPP'; engine.start();
+    $('camera-toggle').setAttribute('aria-pressed','false');
+    $('camera-toggle').setAttribute('aria-label','Switch to first person');
+    $('world').focus({preventScroll:true});
+    setZone(engine.getState().zone);
+    labels.forEach(item=>item.el.tabIndex=0);
+    requestAnimationFrame(() => engine.resize());
+  }
+  function backToIntro() {
+    exploring = false;
+    engine.setAutoTour(false); engine.setKeys(false); engine.setView('overview');
+    $('experience').classList.replace('exploring','intro-mode');
+    document.querySelector('.hero').inert = false;
+    document.querySelector('.hero').removeAttribute('aria-hidden');
+    $('explore-ui').hidden = true; labels.forEach(item=>item.el.tabIndex=-1);
+    $('enter-world').focus({preventScroll:true}); requestAnimationFrame(() => engine.resize());
+  }
+  function openArcade(game='tetris') {
+    if(typeof game!=='string')game='tetris';
+    openModal('arcade-dialog');
+    arcade?.pause();spacewar?.pause();
+    const isSpace=game==='spacewar';
+    $('tetris-root').hidden=isSpace;$('space-root').hidden=!isSpace;
+    $('tab-tetris').setAttribute('aria-pressed',String(!isSpace));$('tab-space').setAttribute('aria-pressed',String(isSpace));
+    if(isSpace){
+      if(!spacewar)spacewar=new window.ATJSpaceWar($('space-root'));
+      spacewar.resume();spacewar.element.focus({preventScroll:true});
+    }else{
+      if(!arcade)arcade=new window.ATJTetris($('tetris-root'),{onExit:()=>closeModal('arcade-dialog')}).mount();
+      arcade.resume();arcade.element.focus({preventScroll:true});
+    }
+  }
+  $('tab-tetris').addEventListener('click',()=>openArcade('tetris'));
+  $('tab-space').addEventListener('click',()=>openArcade('spacewar'));
+  $('quick-tetris').addEventListener('click',()=>openArcade('tetris'));
+  $('quick-space').addEventListener('click',()=>openArcade('spacewar'));
+  $('house-door').addEventListener('click',()=>{
+    const inside=engine.avatar.z<12.6;
+    engine.setTarget(0,inside?16.3:8);$('world').focus({preventScroll:true});
+  });
+  function togglePOV(){
+    const first=engine.getState().view!=='first';engine.setView(first?'first':'follow');
+    $('camera-toggle').textContent=first?'FPP':'TPP';
+    $('camera-toggle').setAttribute('aria-label',`Switch to ${first?'third':'first'} person`);
+    $('camera-toggle').setAttribute('aria-pressed',String(first));
+    $('world').focus({preventScroll:true});
+    toast(first?'First person · WASD to walk · drag to look':'Third person · your character leads the way');
+  }
+  $('overview-button').addEventListener('click',()=>{
+    engine.setView(engine.getState().view==='overview'?'follow':'overview');
+    $('camera-toggle').textContent='TPP';$('camera-toggle').setAttribute('aria-pressed','false');$('camera-toggle').setAttribute('aria-label','Switch to first person');$('world').focus({preventScroll:true});
+  });
+  $('project-grid').innerHTML = projects.map(p => `<button class="project-tile" data-project="${p.id}" aria-label="Walk to ${p.name}"><div class="tile-art">${art(p.id)}<span class="tile-number">${p.number}</span></div><div class="tile-info"><span>${p.category}</span><h3>${p.name}<b aria-hidden="true">↗</b></h3></div></button>`).join('') + '<a class="project-tile tile-contact" href="contact.html"><span class="star">✳</span><h3>The next story<br>could be yours.</h3><span>LET’S TALK ↗</span></a>';
+  $('zone-steps').innerHTML = projects.map(p => `<button class="zone-step" data-zone="${p.id}" title="${p.name}" aria-label="Walk to ${p.name}">${p.number}</button>`).join('');
+  document.querySelectorAll('[data-project]').forEach(el=>el.addEventListener('click',()=>navigateTo(el.dataset.project)));
+  document.querySelectorAll('[data-zone]').forEach(el=>el.addEventListener('click',()=>navigateTo(el.dataset.zone)));
+  $('enter-world').addEventListener('click',enterWorld);
+  $('back-to-intro').addEventListener('click',backToIntro);
+  $('intro-game').addEventListener('click',openArcade);
+  $('arcade-button').addEventListener('click',openArcade);
+  $('arcade-enter').addEventListener('click',()=>{closeModal('arcade-dialog');enterWorld();});
+  $('open-nearby').addEventListener('click',openNearby);
+  $('projects-button').addEventListener('click',()=>openModal('project-directory'));
+  $('fallback-projects').addEventListener('click',()=>openModal('project-directory'));
+  document.querySelector('.skip-link').addEventListener('click',e=>{e.preventDefault();openModal('project-directory');});
+  $('help-button').addEventListener('click',()=>openModal('help-dialog'));
+  $('next-project').addEventListener('click',()=>showProject(projects[(projects.findIndex(p=>p.id===detailId)+1)%projects.length].id));
+  $('camera-toggle').addEventListener('click',togglePOV);
+  $('tour-button').addEventListener('click',()=>{
+    const enabled = !engine.getState().tour; engine.setAutoTour(enabled);
+    toast(enabled ? 'Your tour is underway. Open a story at each stop.' : 'Your pace. Your path.');
+    $('world').focus({preventScroll:true});
+  });
+  document.addEventListener('keydown',event=>{
+    if(exploring&&!failed&&!modalOpen()&&event.key.toLowerCase()==='v'&&!event.repeat&&!/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)){event.preventDefault();togglePOV();}
+    if (exploring && !failed && !modalOpen() && (event.key==='e'||event.key==='E') && !event.repeat && !/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) { event.preventDefault(); openNearby(); }
+  });
+  document.querySelectorAll('[data-move]').forEach(button=>{
+    const release = ()=>{engine?.keys.delete(button.dataset.move);};
+    button.addEventListener('pointerdown',event=>{
+      if(!ready||!exploring||modalOpen())return;
+      event.preventDefault();button.setPointerCapture(event.pointerId);
+      engine.setAutoTour(false);engine.keys.add(button.dataset.move);
+    });
+    button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('lostpointercapture',release);
+  });
+
+  $('sound-toggle').addEventListener('click',async()=>{
+    try {
+      if (!soundContext) {
+        const Audio = window.AudioContext || window.webkitAudioContext;
+        if (!Audio) { toast('Ambient audio is unavailable on this device.'); return; }
+        soundContext = new Audio(); soundGain = soundContext.createGain(); soundGain.gain.value=0; soundGain.connect(soundContext.destination);
+        [110,164.81,220].forEach((frequency,i)=>{const oscillator=soundContext.createOscillator(),level=soundContext.createGain();oscillator.type='sine';oscillator.frequency.value=frequency;level.gain.value=[.5,.22,.12][i];oscillator.connect(level);level.connect(soundGain);oscillator.start();});
+      }
+      await soundContext.resume(); soundOn=!soundOn; soundGain.gain.setTargetAtTime(soundOn?.045:0,soundContext.currentTime,.5);
+      $('sound-toggle').setAttribute('aria-pressed',String(soundOn));$('sound-toggle').setAttribute('aria-label',`Turn ${soundOn?'off':'on'} ambient sound`);
+      toast(soundOn?'Ambient sound on.':'Ambient sound off.');
+    } catch (_) { toast('Audio couldn’t start. You can keep exploring.'); }
+  });
+  document.addEventListener('visibilitychange',()=>{ if(document.hidden){engine?.stop();soundContext?.suspend();spacewar?.pause();arcade?.pause();}else{if(ready&&!failed)engine?.start();if(soundOn)soundContext?.resume().catch(()=>{});} });
+
+  function positionLabels() {
+    const sign=engine.projectPoint(0,5.65,13.05);$('house-sign').style.left=`${sign.x}px`;$('house-sign').style.top=`${sign.y}px`;$('house-sign').style.visibility=sign.visible?'visible':'hidden';
+    labels.forEach(item=>{
+      const point = engine.projectPoint(item.zone.x,2.9,item.zone.z);
+      const onScreen=point.visible && (exploring || point.x>engine.width*.35);
+      item.el.style.left=`${point.x}px`;item.el.style.top=`${point.y}px`;item.el.style.opacity=onScreen?'1':'0';
+      item.el.style.visibility=onScreen?'visible':'hidden';
+    });
+  }
+  function animateLabels() {
+    if (failed) return;
+    if (engine.running) positionLabels();
+    requestAnimationFrame(animateLabels);
+  }
+  function loading(progress,label) {
+    $('load-percent').textContent=`${Math.round(progress*100).toString().padStart(2,'0')}%`;
+    $('load-bar').style.width=`${Math.round(progress*100)}%`;$('load-label').textContent=label;
+    $('arcade-ready').textContent=progress<1?'The venue is taking shape while you play.':'Your experience is ready whenever you are.';
+    $('arcade-enter').disabled=progress<1;
+  }
+  function fallback() {
+    failed=true;ready=false;engine?.stop();
+    $('world-viewport').hidden=true;$('world-fallback').hidden=false;
+    $('enter-world').disabled=false;$('enter-world').innerHTML='Explore the projects <span>↗</span>';
+    $('load-label').textContent='The project collection is ready';$('load-percent').textContent='';$('load-bar').style.width='100%';
+    $('arcade-enter').disabled=false;$('arcade-enter').textContent='Explore the projects ↗';
+    if(exploring){exploring=false;$('explore-ui').hidden=true;$('experience').classList.replace('exploring','intro-mode');document.querySelector('.hero').inert=false;document.querySelector('.hero').removeAttribute('aria-hidden');}
+  }
+  updateVisited();
+  engine = new window.ATJEngine($('world'),{
+    onReady:loading,
+    onZone:setZone,
+    onMove:state=>{
+      const inside=Math.abs(state.x)<18.7&&state.z<12.6;
+      $('house-status').textContent=inside?'INSIDE · THE EXPERIENCE HOUSE':'OUTSIDE · THE ARCADE PATIO';
+      $('house-door').textContent=inside?'Go outside ↗':'Enter the house ↗';
+      $('tour-label').textContent=state.tour?'Pause tour':'Guide me';$('tour-button').setAttribute('aria-pressed',String(state.tour));
+    },
+    onError:fallback
+  });
+  engine.setKeys(false);
+  engine.init(window.ATJWorld).then(()=>{
+    if(engine.failed)return;
+    ready=true;
+    labels=engine.zones.map(zone=>{
+      const el=document.createElement('button');el.className='world-label';el.tabIndex=-1;
+      el.setAttribute('aria-label',`Walk to ${byId[zone.id]?.name||zone.label}`);
+      el.innerHTML=`<span class="label-name ${(zone.id==='tetris'||zone.id==='spacewar')?'game-label':''}"><b>${byId[zone.id]?.number||zone.number}</b>${byId[zone.id]?.name||zone.label}</span><span class="label-dot"></span>`;
+      el.addEventListener('click',()=>navigateTo(zone.id));$('world-labels').appendChild(el);return {zone,el};
+    });
+    $('enter-world').disabled=false;$('enter-world').innerHTML='Enter the experience <span>↗</span>';
+    engine.start();positionLabels();requestAnimationFrame(animateLabels);
+    if(location.hash==='#explore'&&!modalOpen())enterWorld();
+  }).catch(fallback);
+})();
+
+</script>
+</body></html>
